@@ -2,38 +2,59 @@
 #define FXDADOS_H_INCLUDED
 #include <time.h>
 
-int randomDados(void) //Para randomizado
-{
-    int outcome;
-    int l_limit = 1;  // floor or lower limit of a die
-    int h_limit = 7; //ceiling or higher limit of a die
+//PROTOTIPOS:
+int numeroRandom(int vectorDados[]);
+void primerTiro(int cantDados, int vectorDados[]);
+void cambioDado(int cantDados, int vectorDados[]);
 
-    outcome = rand() % (h_limit - l_limit) + l_limit;
+int turnoUnJugador(int vectorDados[]); //int porque devuelve el puntaje final
 
-    return outcome;
+//DESARROLLO:
+int numeroRandom(void){ //Para randomizado
+    int nRandom;
+    int minimo = 1;
+    int maximo = 7;
+    nRandom = rand() % (maximo - minimo) + minimo;
+    if(nRandom==7){nRandom=6;}
 
+    return nRandom;
 }
-int tirada(int cantDados, int vectorDados[]){  //Realiza un tiro. 5 dados si es 1era tirada, diferente si es por cambio.
+
+void primerTiro(int cantDados, int vectorDados[]){
     srand(time(0));
     for(int i=0;i<cantDados;i++){
-        std::cout << randomDados() << std::endl;
+        cout<<numeroRandom()<<endl;
     }
-    return vectorDados;
 }
 
-int turno(void){ //Realiza un turno en SinglePlayer
+void cambioDado(int cantDados, int vectorDados[]){
+    int aCambiar;
+    for (int i=0;i<cantDados;i++){
+        cout<<"Dado "<<(i+1)<<" sera:"<<endl;
+        cin>>aCambiar;
+        vectorDados[aCambiar-1]=numeroRandom();
+    }
+}
+
+int turno(int vectorDados[]){ //Realiza un turno en SinglePlayer
     int cantDados=5;
     int opcion;
-    tirada(cantDados);
-    cout<<"Queres cambiar algun dado?"<<endl;
+    primerTiro(cantDados,vectorDados);
+    cout<<"Queres cambiar algun dado? 1-SI / 2-NO"<<endl;
     cin>>opcion;
-    cout<<"Cuantos quiere cambiar"?<<endl;
-    cin>>cantDados;
-    for (int i=0;i<cantDados;i++){
-        cout<<"Dado "<<(i+1)<<" sera:"
-        cin>>aCambiar;
-        vectorDados[aCambiar-1]=randomDados();
+    switch (opcion){
+        case 1:
+            cout<<"Cuantos quiere cambiar?"<<endl;
+            cin>>cantDados;
+            cambioDado(cantDados,vectorDados);
+            break;
+        case 2:
+            break;
+        default:
+            cout<<"Ingrese un numero valido"<<endl;
+            break;
     }
+
     //fx leerVector de 'vectores.h'
 
 }
