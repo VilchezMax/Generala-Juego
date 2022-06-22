@@ -34,8 +34,13 @@ int jugadas(int vectorDados[], int vectorJugador[], int tirada){
     case 3:
         full();
         break;
-    default: escalera();
-             if (escalera()==0){puntajeNumero();}
+    default: ;
+            int puntajeEscalera=escalera(vectorJugador,vectorDados);
+             if (puntajeEscalera!=0){
+
+             } else {
+             puntajeNumero();
+             }
              break;
     }
     return puntaje;
@@ -65,7 +70,8 @@ int full(){
 
 }
 int escalera(int vectorJugador[], int vectorDados[]){
-    ordenarVector(vectorDados);
+    int puntaje;
+    ordenarVector(vectorDados,5)
     /*for (i=0;i<5;i++){
         if(vectorDados[i]==vectorDados[i+1]){
             puntos:
@@ -81,6 +87,7 @@ int escalera(int vectorJugador[], int vectorDados[]){
         }
 
     }
+    return puntaje;
 }
 int puntajeNumero(){
 
