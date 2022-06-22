@@ -61,9 +61,9 @@ int main(){
             //PROCESO 2 JUGADORES.
             // aca iria un for con 2 secuencias adentro, osea 1 para player 1 y otra para player2 intercalados.
             int * ganador;
-            if(sumarVector(vectorJugador1)>sumarVector(vectorJugador2)){
+            if(sumarVector(vectorJugador1,13)>sumarVector(vectorJugador2,13)){
                 ganador=vectorJugador1;
-            } else if (sumarVector(vectorJugador2)>sumarVector(vectorJugador1)){
+            } else if (sumarVector(vectorJugador2,13)>sumarVector(vectorJugador1,13)){
                 ganador=vectorJugador2;
             } else {
                 ganador=vectorPuntajes;

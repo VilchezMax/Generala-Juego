@@ -71,7 +71,7 @@ int full(){
 }
 int escalera(int vectorJugador[], int vectorDados[]){
     int puntaje;
-    ordenarVector(vectorDados,5)
+    ordenarVector(vectorDados,5);
     /*for (i=0;i<5;i++){
         if(vectorDados[i]==vectorDados[i+1]){
             puntos:
