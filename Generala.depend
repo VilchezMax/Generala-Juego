@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1655854693 source:c:\users\maxim\escritorio\utn\primer a—o\laboratorio 1\proyecto final\generala\generala\main.cpp
+	<iostream>
+	<cstdlib>
+	<time.h>
+	"headers/fxDados.h"
+	"headers/vectores.h"
+
+1655854468 c:\users\maxim\escritorio\utn\primer a—o\laboratorio 1\proyecto final\generala\generala\headers\fxdados.h
+	<time.h>
+
+1655854604 c:\users\maxim\escritorio\utn\primer a—o\laboratorio 1\proyecto final\generala\generala\headers\vectores.h
+	"fxDados.h"
+

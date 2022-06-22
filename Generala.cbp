@@ -32,6 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="headers/fxDados.h" />
+		<Unit filename="headers/jugadas.h" />
+		<Unit filename="headers/vectores.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>
