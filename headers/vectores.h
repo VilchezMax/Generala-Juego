@@ -30,7 +30,21 @@ int sumarVector(int vect[], int size){   //Fx para sumar puntajes finales
     return suma;
 }
 
-void ordenarVector(int vect[], int size){
+
+//ordenar vector
+void ordenarVector(int vect[],int size){
+    int aux;
+    for (int i=0;i<size;i++){
+        for (int j=0;j<size-1;j++){
+            if (vect[j]>vect[j+1]){
+                aux=vect[j];
+                vect[j]=vect[j+1];
+                vect[j+1]=aux;
+            }
+        }
+    }
+}
+void ordenarVectorr(int vect[], int size){
     while(!(vect[0]<vect[1] && vect[1]<vect[2] && vect[2]<vect[3] && vect[3]<vect[4])){
         for(int i=0;i<size;i++){
             if(vect[i]>vect[i+1]){
@@ -41,7 +55,5 @@ void ordenarVector(int vect[], int size){
         }
     }
 }
-
-
 
 #endif // VECTORES_H_INCLUDED

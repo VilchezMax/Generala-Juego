@@ -2,28 +2,37 @@
 #define FINALPARTIDA_H_INCLUDED
 
 
-// HAY QUE ARREFLAR TODO LO QUE SEA STRING/CHAR NOMBRE JUGADOR
+// HAY QUE ARREGLAR TODO LO QUE SEA STRING/CHAR NOMBRE JUGADOR
 
 //PROTOTIPOS:
 void imprimirResultados(int vectorJugador[], char nombreJugador[], int tiradas);
+void diaDeSuerte(); //Funcion que se ejecuta cuando hay generala servida;
 
 
 
 //DESARROLLOS:
-void imprimirGanador(int vectorJugador[], char nombreJugador[], int tiradas){
-    int puntajeFinal = sumarVector(vectorJugador,13);
+void imprimirResultados(int vectorJugador[], string nombreJugador, int tiradas){
+    int puntajeFinal = sumarVector(vectorJugador,12)-vectorJugador[0];
+    // se resta porque el indice 0 es el marcador de TURNOS
+    // pero quizas es al pedo q este turno ahi siendo el i del for del main. Pasa que hay que llenar con algo el indice 0 asi
+    // los numeros coinciden con su indice de array. quizas apsar "generala servida" al indice 0 sea lo mejor. y evaluar
+    //(vector[0]!=0) es porque no hay grala servdia ys e sigue jugando
 
     cout<<"El puntaje conseguid por: "<<nombreJugador<<endl;
     cout<<"Fue de : "<<puntajeFinal<<" puntos!!!!"<<endl;
     cout<<"Conseguidos tirando los dados "<<tiradas<<" veces"<<endl;
 }
 
-void imprimirGanador(int vectorJugador[], char nombreJugador[], int tiradas){
-    int puntajeFinal = sumarVector(vectorJugador,13);
+bool diaDeSuerte(string nombre){
+    system("cls");
+    cout<<nombre<<" ..."<<endl;
+    cout<<"!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡"<<endl;
+    cout<<"!¡!¡  SACASTE GENERALA SERVIDA  ¡!¡!"<<endl;
+    cout<<"!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡"<<endl;
+    cout<<"!¡!¡!¡!¡ GANASTE EL JUEGO !¡!¡!¡!¡!¡"<<endl;
+    cout<<"!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡"<<endl;
 
-    cout<<"El puntaje mas alto fue conseguido por: "<<nombreJugador<<"."<<endl;
-    cout<<"Obtuvo: "<<puntajeFinal<<" puntos!!!!"<<endl;
-    cout<<"Conseguidos tirando los dados "<<tiradas<<" veces"<<endl;
+    return true;
 }
 
 #endif // FINALPARTIDA_H_INCLUDED

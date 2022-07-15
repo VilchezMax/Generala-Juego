@@ -29,10 +29,10 @@ int jugadas(int vectorDados[], int vectorJugador[], int tirada){
         generala(vectorJugador, tirada);
         break;
     case 4:
-        poker();
+        poker(vectorDados);
         break;
     case 3:
-        full();
+        full(vectorDados);
         break;
     default: ;
             int puntajeEscalera=escalera(vectorJugador,vectorDados);
@@ -48,49 +48,92 @@ int jugadas(int vectorDados[], int vectorJugador[], int tirada){
 
 
 int generala(int vectorJugador[], int tirada){
-    int puntos;
-    if(tirada=1){
+    int puntaje = 0;
+    if(tirada==1){
         //Funcion GANO_EL_JUEGO_QUE_OJETE();
         // vectorJugador[12] = 1;
         // puntos = ??; fijarse en el apunte.
-    } else if ((vectorJugador[10]==0) && (tirada==2 || tirada==3)){
-        puntos=50;
-    } else if (vectorJugador[10]!=0 && vectorJugador[10]){
-        puntos=50;
     } else {
-        puntos=0;
+        puntaje=50;
     }
-    return puntos;
-}
-
-int poker(){
-}
-
-int full(){
-
-}
-int escalera(int vectorJugador[], int vectorDados[]){
-    int puntaje;
-    ordenarVector(vectorDados,5);
-    /*for (i=0;i<5;i++){
-        if(vectorDados[i]==vectorDados[i+1]){
-            puntos:
-        }
+    /*
+    } else if ((vectorJugador[10]==0) && (tirada==2 || tirada==3)){
+        puntaje=50;
+    } else if (vectorJugador[10] !=0 && vectorJugador[11]==0){
+        puntaje=50;
     }
-            ESTE FOR ES SOLO PARA HACER MAS ELEGANTE EL ANIDADO DE IFS*/
-    if (vectorDados[0]==vectorDados[1]-1){
-        if (vectorDados[1]==vectorDados[2]-1){
-            if (vectorDados[2]==vectorDados[3]-1){
-                if (vectorDados[3]==vectorDados[4]-1){
-                }
+    */
+
+    return puntaje;
+}
+
+int poker(int vectorDados[]){
+    int puntaje = 0;
+    bool repeticiones4=false;
+    int contRepeticiones;
+
+    for (int i=0;i<5;i++){
+        for(int j=0;j<5;j++){
+            if (vectorDados[i]==vectorDados[j]){
+                contRepeticiones++;
             }
         }
-
+        if(contRepeticiones==4){
+            repeticiones4=true;
+            break;
+        }
+        contRepeticiones=0;
+    }
+    if (repeticiones4==true){
+        puntaje=40;
     }
     return puntaje;
 }
-int puntajeNumero(){
 
+int full(int vectorDados[]){
+    int puntaje = 0;
+    bool repeticiones3=false;
+    bool repeticiones2=false;
+    int contRepeticiones;
+
+    for (int i=0;i<5;i++){
+        for(int j=0;j<5;j++){
+            if (vectorDados[i]==vectorDados[j]){
+                contRepeticiones++;
+            }
+        }
+        if(contRepeticiones==3){
+            repeticiones3=true;
+        } else if (contRepeticiones==2){
+            repeticiones2=true;
+        }
+        contRepeticiones=0;
+    }
+    if (repeticiones3==true && repeticiones2==true){
+        puntaje=30;
+    }
+    return puntaje;
+}
+
+int escalera(int vectorDados[]){
+    int puntaje = 0;
+    ordenarVector(vectorDados,5);
+    for (int i=0;i<5;i++){
+        if(vectorDados[i]+1 == vectorDados[i+1]){
+            puntaje=25;
+        }
+    }
+    return puntaje;
+}
+
+int puntajeNumero(int vectorDados[], int numeroPuntaje){
+    int puntaje = 0;
+    for(int i=0;i<5;i++){
+        if(vectorDados[i]==numeroPuntaje){
+            puntaje+=vectorDados[i];
+        }
+    }
+    return puntaje;
 }
 
 
