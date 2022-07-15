@@ -25,8 +25,8 @@ HEADERS:
     como dados randomizados, cambio de dados y procesos de rondas.
 
   # finalPartida.h:
-   Este apartado contiene funciones que solamente se van a usar 
-   cuando se presente una sitiacion de final de partida,
-   como impresion de puntajes y anuncio de ganador.
+     Este apartado contiene funciones que solamente se van a usar 
+     cuando se presente una sitiacion de final de partida,
+     como impresion de puntajes y anuncio de ganador.
    
-   #Los headers con funciones para la estetica del menu no fueron implementados. (TODAVIA)
+  # Los headers con funciones para la estetica del menu no fueron implementados. (TODAVIA)
