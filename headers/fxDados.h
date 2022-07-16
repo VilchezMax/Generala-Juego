@@ -57,7 +57,7 @@ void turno1P(int vectorDados[], int vectorJugador[]){
             break;
     }
     cout<<"Asi quedo tu puntaje:"<<endl;
-    leerVector(vectorJugador, 12);
+    leerVector(vectorJugador, 11);
 }
 
 

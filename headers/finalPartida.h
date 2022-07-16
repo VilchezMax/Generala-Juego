@@ -12,7 +12,7 @@ void diaDeSuerte(string nombre); //Funcion que se ejecuta cuando hay generala se
 
 //DESARROLLOS:
 void imprimirResultados(int vectorJugador[], string nombreJugador, int tiradas){
-    int puntajeFinal = sumarVector(vectorJugador,12)-vectorJugador[0];
+    int puntajeFinal = sumarPuntajes(vectorJugador,11);
     // se resta porque el indice 0 es el marcador de TURNOS
     // pero quizas es al pedo q este turno ahi siendo el i del for del main. Pasa que hay que llenar con algo el indice 0 asi
     // los numeros coinciden con su indice de array. quizas apsar "generala servida" al indice 0 sea lo mejor. y evaluar

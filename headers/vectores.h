@@ -6,7 +6,7 @@
 //PROTOTIPOS:
 void cargarVector(int vect[], int size); // Carga vector
 void leerVector(int vect[], int size);   // Lee vector
-int sumarVector(int vect[], int size);   // Suma puntaje de vectores
+int sumarPuntajes(int vect[], int size);   // Suma puntaje de vectores
 void ordenarVector(int vect[], int size);// Ordena vector de menor a mayor, para evaluar ESCALERA
 
 #include "fxDados.h"
@@ -24,9 +24,9 @@ void leerVector(int vect[], int size){
     }
 }
 
-int sumarVector(int vect[], int size){   //Fx para sumar puntajes finales
+int sumarPuntajes(int vect[], int size){   //Fx para sumar puntajes finales
     int suma=0;
-    for (int i=0;i<size;i++){
+    for (int i=1;i<=size;i++){
         suma+=vect[i];
     }
     return suma;

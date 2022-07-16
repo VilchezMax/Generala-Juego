@@ -26,7 +26,7 @@ int main(){
         cout<<"Presione 1 si es un jugador, 2 si son 2 jugadores u otra tecla para salir"<<endl; //PROVISORIO: ESTE MENU SE HARA CON <RLUTIL>
         int jugadores;
         cin>>jugadores;
-        string vectorPuntajes[] = {"Turno","1","2","3","4","5","6","Escalera","Full","Poker","Generala","Generala Doble","Generala Servida"};
+        string vectorPuntajes[] = {"Turno","1","2","3","4","5","6","Escalera","Full","Poker","Generala"};
 
         switch(jugadores){
          /* -------------- 1 JUGADOR ----------------  */
@@ -35,7 +35,7 @@ int main(){
             cout<<"Ingrese su nombre: "<<endl;
             cin>>nombre;
             int vectorDados[5];
-            int vectorJugador[12];
+            int vectorJugador[]={}
             int tiradas = 0;
             int turno,puntajeFinal;
 
