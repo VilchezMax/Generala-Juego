@@ -23,7 +23,6 @@ int numeroRandom(void){ //Para randomizado
 void primerTiro(int cantDados, int vectorDados[]){
     srand(time(0));
     for(int i=0;i<cantDados;i++){
-
         vectorDados[i]=numeroRandom();
         cout<<vectorDados[i]<<endl; //Quizas esto deberia leerse con una fx especifica?
     }
@@ -38,10 +37,8 @@ void cambioDado(int cantDados, int vectorDados[]){
     }
 }
 
-void turno1P(int vectorDados[], int vectorJugador[]){
-    int cantDados=5;
-    int opcion;
-    primerTiro(cantDados,vectorDados);
+void turno1P(int vectorDados, int vectorJugador){
+    int opcion, cantDados;
     cout<<"Queres cambiar algun dado? 1-SI / 2-NO"<<endl;
     cin>>opcion;
     switch (opcion){
@@ -56,8 +53,7 @@ void turno1P(int vectorDados[], int vectorJugador[]){
             cout<<"Ingrese un numero valido"<<endl;
             break;
     }
-    cout<<"Asi quedo tu puntaje:"<<endl;
-    leerVector(vectorJugador, 11);
+
 }
 
 

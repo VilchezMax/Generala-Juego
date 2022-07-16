@@ -26,7 +26,7 @@ int main(){
         cout<<"Presione 1 si es un jugador, 2 si son 2 jugadores u otra tecla para salir"<<endl; //PROVISORIO: ESTE MENU SE HARA CON <RLUTIL>
         int jugadores;
         cin>>jugadores;
-        string vectorPuntajes[] = {"Turno","1","2","3","4","5","6","Escalera","Full","Poker","Generala"};
+        string vectorCategorias[] = {"Turno","1","2","3","4","5","6","Escalera","Full","Poker","Generala"};
 
         switch(jugadores){
          /* -------------- 1 JUGADOR ----------------  */
@@ -35,16 +35,23 @@ int main(){
             cout<<"Ingrese su nombre: "<<endl;
             cin>>nombre;
             int vectorDados[5];
-            int vectorJugador[]={}
+            int vectorJugador[]={0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1}
             int tiradas = 0;
-            int turno,puntajeFinal;
+            int const turnos=10;
+            int puntajeFinal;
+            int cantDados=5;
+            primerTiro(cantDados,vectorDados);
 
-            for (int i=0;i<10;i++){
-                ronda(vectorDados[],vectorJugador[]);
+            for (int i=0;i<turnos;i++){
+                turno1P(vectorDados[],vectorJugador[]);
                 vectorJugador[0]++;
+                cout<<"Asi quedo tu puntaje:"<<endl; //TODO: Funcion leerVector con vectorPuntajes
+                leerVector(vectorPuntaje, 11);
+                leerVector(vectorJugador, 11);
             }
             imprimirResultados(vectorJugador,nombre,tiradas);
             break;
+
         }
       /* -------------- 2 JUGADORES ----------------  */
 
@@ -64,9 +71,9 @@ int main(){
             int vectorJugador2[12];
             int tirada,turno,puntajeFinal;
             for (int i=0;i<10;i++){
-                ronda(vectorDados,vectorJugador1);
+                turno1P(vectorDados[],vectorJugador1[]);
                 vectorJugador1[0]++;
-                ronda(vectorDados,vectorJugador2);
+                turno1P(vectorDados[],vectorJugador2[]);
                 vectorJugador2[0]++;
             }
             //PROCESO 2 JUGADORES.

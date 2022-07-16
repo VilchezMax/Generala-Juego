@@ -18,9 +18,9 @@ void cargarVector(int vect[], int size){
     }
 }
 
-void leerVector(int vect[], int size){
+void leerVector(int vectCategorias[], int vectJugador[], int size){
     for (int i=0;i<size;i++){
-        cout<<vect[i]<<"\t";
+        cout<<vectCategorias[i]<<"  "<<vectJugador[i]<<endl;
     }
 }
 
