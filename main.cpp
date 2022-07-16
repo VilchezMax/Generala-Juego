@@ -29,7 +29,7 @@ int main(){
         string vectorPuntajes[] = {"Turno","1","2","3","4","5","6","Escalera","Full","Poker","Generala","Generala Doble","Generala Servida"};
 
         switch(jugadores){
-         /* -------------- 1 JUGADORES ----------------  */
+         /* -------------- 1 JUGADOR ----------------  */
         case 1:{
             string nombre;
             cout<<"Ingrese su nombre: "<<endl;
