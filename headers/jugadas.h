@@ -7,10 +7,10 @@
 int jugadas(int vectorDados[]); //Aca van todas las funciones de jugadas:
 
 int generala(int vectorJugador[], int tirada);
-int poker();
-int full();
+int poker(int vectorDados[]);
+int full(int vectorDados[]);
 int escalera(int vectorJugador[], int vectorDados[]);
-int puntajeNumero();
+int puntajeNumero (int vectorDados[], int numeroPuntaje);
 
 
 //DESARROLLO:
@@ -26,22 +26,20 @@ int jugadas(int vectorDados[], int vectorJugador[], int tirada){
     }
     switch(coincidencias){
     case 5:
-        generala(vectorJugador, tirada);
+        puntaje=generala(vectorJugador, tirada);
         break;
     case 4:
-        poker(vectorDados);
+        puntaje=poker(vectorDados);
         break;
     case 3:
-        full(vectorDados);
+        puntaje=full(vectorDados);
         break;
-    default: ;
-            int puntajeEscalera=escalera(vectorJugador,vectorDados);
-             if (puntajeEscalera!=0){
-
-             } else {
-             puntajeNumero();
-             }
-             break;
+    default:
+        puntaje=escalera(vectorJugador[],vectorDados[]);
+        if (puntajeEscalera==0){
+        puntaje=puntajeNumero();
+        }
+        break;
     }
     return puntaje;
 }

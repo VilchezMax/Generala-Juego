@@ -1,18 +1,20 @@
 #ifndef VECTORES_H_INCLUDED
 #define VECTORES_H_INCLUDED
-#include "fxDados.h"
+
+
 
 //PROTOTIPOS:
-void cargarVector(int vect[], int size);
-void leerVector(int vect[], int size);
-int sumarVector(int vect[], int size);
-void ordenarVector(int vect[], int size);
+void cargarVector(int vect[], int size); // Carga vector
+void leerVector(int vect[], int size);   // Lee vector
+int sumarVector(int vect[], int size);   // Suma puntaje de vectores
+void ordenarVector(int vect[], int size);// Ordena vector de menor a mayor, para evaluar ESCALERA
 
-
+#include "fxDados.h"
 //DESARROLLO:
 void cargarVector(int vect[], int size){
     for (int i=0;i<size;i++){
-        vect[i]=numeroRandom();
+
+        //vect[i]=numeroRandom();
     }
 }
 
@@ -30,8 +32,6 @@ int sumarVector(int vect[], int size){   //Fx para sumar puntajes finales
     return suma;
 }
 
-
-//ordenar vector
 void ordenarVector(int vect[],int size){
     int aux;
     for (int i=0;i<size;i++){
@@ -44,6 +44,7 @@ void ordenarVector(int vect[],int size){
         }
     }
 }
+
 void ordenarVectorr(int vect[], int size){
     while(!(vect[0]<vect[1] && vect[1]<vect[2] && vect[2]<vect[3] && vect[3]<vect[4])){
         for(int i=0;i<size;i++){

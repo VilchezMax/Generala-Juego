@@ -40,7 +40,7 @@ int main(){
             int turno,puntajeFinal;
 
             for (int i=0;i<10;i++){
-                ronda(vectorDados,vectorJugador);
+                ronda(vectorDados[],vectorJugador[]);
                 vectorJugador[0]++;
             }
             imprimirResultados(vectorJugador,nombre,tiradas);

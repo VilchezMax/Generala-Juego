@@ -4,18 +4,18 @@
 #include "vectores.h"
 
 //PROTOTIPOS:
-int numeroRandom(int vectorDados[]); //Genera un numero aleatorio del 1 al 6. Devuelve el numero generado.
+
+int numeroRandom(void); //Genera un numero aleatorio del 1 al 6. Devuelve el numero generado.
 void primerTiro(int cantDados, int vectorDados[]); //Genera un vector de 5 numeros aleatorios para iniciar el turno. No devuelve, modifica el vectorDados afuera.
 void cambioDado(int cantDados, int vectorDados[]); //Cambia un dado del vector por uno aleatorio. No devuelve, modifica el vectorDados afuera
-int turnoUnJugador(int vectorDados[]); //Proceso de 1 ronda para 1 jugador. Devuelve int porque devuelve el puntaje final
+int turno1P(int vectorDados[],int vectorJugador[]); //Proceso de 1 ronda para 1 jugador. Devuelve int porque devuelve el puntaje final
 
 //DESARROLLO:
 int numeroRandom(void){ //Para randomizado
-    int nRandom;
     int minimo = 1;
     int maximo = 7;
-    nRandom = rand() % (maximo - minimo) + minimo;
-    if(nRandom==7){nRandom=6;}
+    int nRandom = rand() % (maximo - minimo) + minimo;
+    if(nRandom==7){ nRandom=6; }
 
     return nRandom;
 }
@@ -23,7 +23,9 @@ int numeroRandom(void){ //Para randomizado
 void primerTiro(int cantDados, int vectorDados[]){
     srand(time(0));
     for(int i=0;i<cantDados;i++){
-        cout<<numeroRandom()<<endl;
+
+        vectorDados[i]=numeroRandom();
+        cout<<vectorDados[i]<<endl; //Quizas esto deberia leerse con una fx especifica?
     }
 }
 
@@ -36,7 +38,7 @@ void cambioDado(int cantDados, int vectorDados[]){
     }
 }
 
-void ronda(int vectorDados[], int vectorJugador[]){
+void turno1P(int vectorDados[], int vectorJugador[]){
     int cantDados=5;
     int opcion;
     primerTiro(cantDados,vectorDados);

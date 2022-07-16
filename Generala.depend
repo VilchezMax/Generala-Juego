@@ -12,3 +12,24 @@
 1655854604 c:\users\maxim\escritorio\utn\primer a—o\laboratorio 1\proyecto final\generala\generala\headers\vectores.h
 	"fxDados.h"
 
+1657912307 source:c:\users\maxim\escritorio\utn\primer_a—o\lab_1\proyecto_final\generala\generala\main.cpp
+	<iostream>
+	<cstdlib>
+	<time.h>
+	"headers/fxDados.h"
+	"headers/vectores.h"
+	"headers/jugadas.h"
+	"headers/finalPartida.h"
+
+1657914125 c:\users\maxim\escritorio\utn\primer_a—o\lab_1\proyecto_final\generala\generala\headers\fxdados.h
+	<time.h>
+	"vectores.h"
+
+1657913668 c:\users\maxim\escritorio\utn\primer_a—o\lab_1\proyecto_final\generala\generala\headers\vectores.h
+	"fxDados.h"
+
+1657925688 c:\users\maxim\escritorio\utn\primer_a—o\lab_1\proyecto_final\generala\generala\headers\jugadas.h
+	"vectores.h"
+
+1657912303 c:\users\maxim\escritorio\utn\primer_a—o\lab_1\proyecto_final\generala\generala\headers\finalpartida.h
+
