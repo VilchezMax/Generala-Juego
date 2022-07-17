@@ -125,7 +125,8 @@ void jugadasValidas (int vectorPuntajesValidos[],string vectorCategorias[], int 
     int opcion=0;
     int eleccion;
     cout<<"Usted puede elegir entre las siguientes jugadas:"<<endl;
-    for (int i=10;i<=1;i++){
+    for (int i=10;i>=1;i--){
+            cout<<"PRUEBAFOR"<<endl;
         if (vectorPuntajesValidos[i]!=0 && vectorJugador[i]!= -1 ){
             cout<<opcion+1<<")"<<vectorCategorias[i]<<" - puntos: "<<vectorPuntajesValidos[i]<<endl;
             vectorOpciones[opcion]=i;
@@ -133,9 +134,10 @@ void jugadasValidas (int vectorPuntajesValidos[],string vectorCategorias[], int 
             //TERMINAR
         }
     }
+
     if(opcion==0){
         cout<<"No hay jugadas disponibles, tiene que anular alguna de las siguientes:"<<endl;
-        for (int i=10;i<=1;i++){
+        for (int i=10;i>=1;i--){
             if (vectorJugador[i]== -1){
                 cout<<opcion+1<<")"<<vectorCategorias[i]<<endl;
                 vectorOpciones[opcion]=i;

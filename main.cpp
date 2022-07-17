@@ -49,23 +49,27 @@ int main(){
 
             for (int i=0;i<turnos;i++){
                 int tiradas = 0;
+
                 cout<<"Sus dados son: "<<endl;
                 primerTiro(cantDados,vectorDados);
                 tiradas++;
                 turno1P(vectorDados,cantDados,tiradas);
                 vectorJugador[0]++;
-                //EVALUACIONES
+
                 servida=generalaServida(vectorJugador,tiradas);
                 if (servida==true){
                     diaDeSuerte();
                     break;
                 }
+
                 evaluacionJugadas(vectorDados,vectorPuntajesValidos);
                 jugadasValidas(vectorPuntajesValidos,vectorCategorias,vectorJugador,vectorOpciones);
+                cout<<"pruebamain"<<endl;
                 cout<<"Asi quedo tu puntaje:"<<endl;
                 leerVector(nombre,vectorCategorias,vectorJugador, 11);
                 puntajeFinal=sumarPuntajes(vectorJugador,tamano);
                 cout<<"Su puntaje actual es: "<<puntajeFinal<<endl;
+
                 acumTiradas+=tiradas;
             }
             imprimirResultados(vectorJugador,nombre,acumTiradas);
@@ -73,16 +77,24 @@ int main(){
 
         }
 
-        /*case 3:{
-
-        }*/
-        default:{
-            cout<<"---------------------- Vuelva a jugar pronto! ----------------------"<<endl;
+        case 2:{
+            cout<<"Maximos puntajes:"<<endl;
+            cout<<"----------------------"<<endl;
+            cout<<"10 - Maximiliano Vilchez"<<endl;
+            cout<<"10 - Facundo Vilchez"<<endl;
             system("pause");
-            exit(0);
+            break;
+
+        }
+        default:{
+            jugar=false;
+            break;
         }
         }
     }
+    cout<<"---------------------- Vuelva a jugar pronto! ----------------------"<<endl;
+    system("pause");
+    exit(0);
     return 0;
 
 }
