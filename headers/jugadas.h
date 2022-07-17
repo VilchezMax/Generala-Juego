@@ -14,7 +14,7 @@ int puntajeNumero (int vectorDados[], int numeroPuntaje);
 
 
 //DESARROLLO:
-int jugadas(int vectorDados[], int vectorJugador[], int tirada){
+/*int jugadas(int vectorDados[], int vectorJugador[], int tirada){
     int puntaje;
     int coincidencias= -5; //Tiene en cuenta las coincidencias consigo mismo que ocurriran aunque no se repita con otro dado.
     for(int i=0;i<5;i++){
@@ -35,15 +35,15 @@ int jugadas(int vectorDados[], int vectorJugador[], int tirada){
         puntaje=full(vectorDados);
         break;
     default:
-        puntaje=escalera(vectorJugador[],vectorDados[]);
-        if (puntajeEscalera==0){
+        puntaje=escalera(vectorJugador,vectorDados);
+        if (puntaje==0){
         puntaje=puntajeNumero();
         }
         break;
     }
     return puntaje;
 }
-
+TODO */
 
 int generala(int vectorJugador[], int tirada){
     int puntaje = 0;

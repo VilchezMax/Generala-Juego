@@ -33,3 +33,24 @@
 
 1657912303 c:\users\maxim\escritorio\utn\primer_a—o\lab_1\proyecto_final\generala\generala\headers\finalpartida.h
 
+1658016219 source:c:\users\facun\desktop\utn\generala\generala-juego\main.cpp
+	<iostream>
+	<cstdlib>
+	<time.h>
+	"headers/fxDados.h"
+	"headers/vectores.h"
+	"headers/jugadas.h"
+	"headers/finalPartida.h"
+
+1658016264 c:\users\facun\desktop\utn\generala\generala-juego\headers\fxdados.h
+	<time.h>
+	"vectores.h"
+
+1658015924 c:\users\facun\desktop\utn\generala\generala-juego\headers\vectores.h
+	"fxDados.h"
+
+1658015688 c:\users\facun\desktop\utn\generala\generala-juego\headers\jugadas.h
+	"vectores.h"
+
+1658015739 c:\users\facun\desktop\utn\generala\generala-juego\headers\finalpartida.h
+

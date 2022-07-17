@@ -35,7 +35,7 @@ int main(){
             cout<<"Ingrese su nombre: "<<endl;
             cin>>nombre;
             int vectorDados[5];
-            int vectorJugador[]={0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1}
+            int vectorJugador[]={0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
             int tiradas = 0;
             int const turnos=10;
             int puntajeFinal;
@@ -43,11 +43,10 @@ int main(){
             primerTiro(cantDados,vectorDados);
 
             for (int i=0;i<turnos;i++){
-                turno1P(vectorDados[],vectorJugador[]);
+                turno1P(vectorDados,cantDados);
                 vectorJugador[0]++;
                 cout<<"Asi quedo tu puntaje:"<<endl; //TODO: Funcion leerVector con vectorPuntajes
-                leerVector(vectorPuntaje, 11);
-                leerVector(vectorJugador, 11);
+                leerVector(vectorCategorias,vectorJugador, 11);
             }
             imprimirResultados(vectorJugador,nombre,tiradas);
             break;

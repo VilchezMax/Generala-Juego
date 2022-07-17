@@ -8,7 +8,7 @@
 int numeroRandom(void); //Genera un numero aleatorio del 1 al 6. Devuelve el numero generado.
 void primerTiro(int cantDados, int vectorDados[]); //Genera un vector de 5 numeros aleatorios para iniciar el turno. No devuelve, modifica el vectorDados afuera.
 void cambioDado(int cantDados, int vectorDados[]); //Cambia un dado del vector por uno aleatorio. No devuelve, modifica el vectorDados afuera
-int turno1P(int vectorDados[],int vectorJugador[]); //Proceso de 1 ronda para 1 jugador. Devuelve int porque devuelve el puntaje final
+int turno1P(int vectorDados[],int vectorJugador[], int cantDados); //Proceso de 1 ronda para 1 jugador. Devuelve int porque devuelve el puntaje final
 
 //DESARROLLO:
 int numeroRandom(void){ //Para randomizado
@@ -37,8 +37,8 @@ void cambioDado(int cantDados, int vectorDados[]){
     }
 }
 
-void turno1P(int vectorDados, int vectorJugador){
-    int opcion, cantDados;
+void turno1P(int vectorDados[],int cantDados){
+    int opcion;
     cout<<"Queres cambiar algun dado? 1-SI / 2-NO"<<endl;
     cin>>opcion;
     switch (opcion){
