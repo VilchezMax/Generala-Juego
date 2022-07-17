@@ -23,10 +23,14 @@ int main(){
     bool jugar = true;
     while(jugar){
         system("cls");
+<<<<<<< HEAD
+        cout<<"Presione 1 para jugar"<<endl; //PROVISORIO: ESTE MENU SE HARA CON <RLUTIL>
+=======
         cout<<"Presione: "<<endl;
         cout<<"1: Si es un jugador"<<endl;
         cout<<"2: Si son 2 jugadores(proximamente)"<<endl;
         cout<<"Otra tecla para salir"<<endl; //PROVISORIO: ESTE MENU SE HARA CON <RLUTIL>
+>>>>>>> 1c7a8003f2db07c7b139a99f24aacf69b3da9744
         int jugadores;
         cin>>jugadores;
         string vectorCategorias[] = {"   TURNO","       1","       2","       3","       4",
