@@ -2,6 +2,7 @@
 #define JUGADAS_H_INCLUDED
 
 #include "vectores.h"
+#include "finalPartida.h"
 
 //PROTOTIPOS DE JUGADAS:
 int jugadas(int vectorDados[]); //Aca van todas las funciones de jugadas:
@@ -48,6 +49,7 @@ TODO */
 int generala(int vectorJugador[], int tirada){
     int puntaje = 0;
     if(tirada==1){
+            finalPartida();
         //Funcion GANO_EL_JUEGO_QUE_OJETE();
         // vectorJugador[12] = 1;
         // puntos = ??; fijarse en el apunte.
@@ -114,12 +116,15 @@ int full(int vectorDados[]){
 }
 
 int escalera(int vectorDados[]){
-    int puntaje = 0;
+    int puntaje = 0, contador = 0;
     ordenarVector(vectorDados,5);
     for (int i=0;i<5;i++){
         if(vectorDados[i]+1 == vectorDados[i+1]){
-            puntaje=25;
+            contador++;
         }
+    }
+    if(contador==4){
+        puntaje=25;
     }
     return puntaje;
 }
