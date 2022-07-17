@@ -5,7 +5,7 @@
 
 //PROTOTIPOS:
 void cargarVector(int vect[], int size); // Carga vector
-void leerVector(string vectCategorias[],int vectJugador[], int size);   // Lee vector
+void leerVector(string nombre,string vectCategorias[],int vectJugador[], int size);   // Lee vector
 int sumarPuntajes(int vect[], int size);   // Suma puntaje de vectores
 void ordenarVector(int vect[], int size);// Ordena vector de menor a mayor, para evaluar ESCALERA
 
@@ -13,14 +13,17 @@ void ordenarVector(int vect[], int size);// Ordena vector de menor a mayor, para
 //DESARROLLO:
 void cargarVector(int vect[], int size){
     for (int i=0;i<size;i++){
-
         //vect[i]=numeroRandom();
     }
 }
 
-void leerVector(string vectCategorias[], int vectJugador[], int size){
+void leerVector(string nombre,string vectCategorias[], int vectJugador[], int size){
+        cout<<" ----------------"<<endl;
+        cout<<"|  JUGADOR | "<<nombre<<endl;
+        cout<<" ----------------"<<endl;
     for (int i=0;i<size;i++){
-        cout<<vectCategorias[i]<<"  "<<vectJugador[i]<<endl;
+        cout<<"| "<<vectCategorias[i]<<" | "<<vectJugador[i]<<endl;
+        cout<<" ----------------"<<endl;
     }
 }
 
