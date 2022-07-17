@@ -84,25 +84,24 @@ int full(int vectorDados[]){
 }
 
 int escalera(int vectorDados[]){
-    int puntaje = 0;
-    int contador = 0;
     ordenarVector(vectorDados,5);
-    for (int i=0;i<5;i++){
-        if(vectorDados[i]+1 == vectorDados[i+1]){
-            contador++;
+    if (vectorDados[0] == 1 || vectorDados[0] == 2){
+        for (int i = 1; i < 5; i++){
+            if (vectorDados[i] != vectorDados[i - 1] + 1){
+                return 0;
+            }
         }
+    } else{
+        return 0;
     }
-    if(contador==4){
-        puntaje=25;
-    }
-    return puntaje;
+    return 25;
 }
 
 int puntajeNumero(int vectorDados[], int numeroPuntaje){
     int puntaje = 0;
     for(int i=0;i<5;i++){
         if(vectorDados[i]==numeroPuntaje){
-            puntaje+=vectorDados[i];
+            puntaje+=numeroPuntaje;
         }
     }
     return puntaje;
@@ -119,6 +118,9 @@ void evaluacionJugadas(int vectorDados[],int vectorPuntajesValidos[]){
     vectorPuntajesValidos[3]=puntajeNumero(vectorDados,3);
     vectorPuntajesValidos[2]=puntajeNumero(vectorDados,2);
     vectorPuntajesValidos[1]=puntajeNumero(vectorDados,1);
+    for (int i=10;i>=1;i--){
+        cout<<"indice "<<i<<" - "<<vectorPuntajesValidos[i]<<endl;
+    }
 }
 
 void jugadasValidas (int vectorPuntajesValidos[],string vectorCategorias[], int vectorJugador[], int vectorOpciones[]){
@@ -126,15 +128,12 @@ void jugadasValidas (int vectorPuntajesValidos[],string vectorCategorias[], int 
     int eleccion;
     cout<<"Usted puede elegir entre las siguientes jugadas:"<<endl;
     for (int i=10;i>=1;i--){
-            cout<<"PRUEBAFOR"<<endl;
-        if (vectorPuntajesValidos[i]!=0 && vectorJugador[i]!= -1 ){
+        if (vectorPuntajesValidos[i] !=0 && vectorJugador[i]== -1 ){
             cout<<opcion+1<<")"<<vectorCategorias[i]<<" - puntos: "<<vectorPuntajesValidos[i]<<endl;
             vectorOpciones[opcion]=i;
             opcion++;
-            //TERMINAR
         }
     }
-
     if(opcion==0){
         cout<<"No hay jugadas disponibles, tiene que anular alguna de las siguientes:"<<endl;
         for (int i=10;i>=1;i--){

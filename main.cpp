@@ -22,17 +22,25 @@ int main(){
         system("cls");
         cout<<"Presione: "<<endl;
         cout<<"1 - Modo un jugador"<<endl;
-        cout<<"2 - Ver puntajes maximos"<<endl;
-        cout<<"Otra tecla para salir"<<endl;
+        cout<<"2 - Modo profesor"<<endl;
+        cout<<"3 - Ver puntajes maximos"<<endl;
+        cout<<"Otro - Salir"<<endl;
 
-        int jugadores;
-        cin>>jugadores;
+        int menu;
+        cin>>menu;
         string vectorCategorias[] = {"   TURNO","       1","       2","       3","       4",
                                      "       5","       6","Escalera","    Full","   Poker","Generala"};
 
-        switch(jugadores){
+        switch(menu){
          /* -------------- 1 JUGADOR ----------------  */
-        case 1:{
+        case 1:
+        case 2:{
+            int turnos;
+            if(menu==1){
+                turnos=10;
+            } else if (menu==2){
+                turnos=2;
+            }
             string nombre;
             cout<<"Ingrese su nombre: "<<endl;
             cin>>nombre;
@@ -40,7 +48,6 @@ int main(){
             int vectorJugador[]={0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
             int vectorPuntajesValidos[10]; //[0] cuenta turnos, no cuenta
             int vectorOpciones[10];
-            int const turnos=10;
             int puntajeFinal;
             int tamano=sizeof(vectorJugador);
             int cantDados=5;
@@ -64,20 +71,22 @@ int main(){
 
                 evaluacionJugadas(vectorDados,vectorPuntajesValidos);
                 jugadasValidas(vectorPuntajesValidos,vectorCategorias,vectorJugador,vectorOpciones);
-                cout<<"pruebamain"<<endl;
-                cout<<"Asi quedo tu puntaje:"<<endl;
+                acumTiradas+=tiradas;
+                system("cls");
+                //ACA EMPIEZA CARTEL FINL TURNO:
+                cout<<"      PUNTAJE"<<endl<<endl;
                 leerVector(nombre,vectorCategorias,vectorJugador, 11);
                 puntajeFinal=sumarPuntajes(vectorJugador,tamano);
-                cout<<"Su puntaje actual es: "<<puntajeFinal<<endl;
-
-                acumTiradas+=tiradas;
+                cout<<"PUNTAJE ACTUAL: "<<puntajeFinal<<" PUNTOS"<<endl;
+                cout<<"LANZAMIENTOS: "<<acumTiradas<<endl;
+                system("pause");
             }
             imprimirResultados(vectorJugador,nombre,acumTiradas);
             break;
 
         }
 
-        case 2:{
+        case 3:{
             cout<<"Maximos puntajes:"<<endl;
             cout<<"----------------------"<<endl;
             cout<<"10 - Maximiliano Vilchez"<<endl;

@@ -33,22 +33,22 @@ void leerVector(string nombre,string vectCategorias[], int vectJugador[], int ta
 int sumarPuntajes(int vect[], int tamano){   //Fx para sumar puntajes finales
     int suma=0;
     for (int i=1;i<=tamano;i++){
+        if(vect[i]>0){
         suma+=vect[i];
+        }
     }
     return suma;
 }
 
 void ordenarVector(int vect[], int tamano){
-    int i,j, posmin, aux;
-    for(i=0;i<tamano-1;i++){
-        posmin=i;
-        for(j=i+1;j<tamano;j++){
-            if(vect[j]<vect[posmin]){
-            posmin=j;
+    int temp;
+    for (int i=0;i<tamano;i++){
+        for (int j=0;j<tamano-1;j++){
+            if (vect[j]>vect[j+1]){
+                temp=vect[j];
+                vect[j]=vect[j+1];
+                vect[j+1]=temp;
             }
-        aux=vect[i];
-        vect[i]=vect[posmin];
-        vect[posmin]=aux;
         }
     }
 }
