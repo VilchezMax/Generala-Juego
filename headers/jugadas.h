@@ -2,11 +2,7 @@
 #define JUGADAS_H_INCLUDED
 
 #include "vectores.h"
-<<<<<<< HEAD
-#include "finalpartida.h"
-=======
 #include "finalPartida.h"
->>>>>>> 445446ea7885bd2f84b8efc80f75ba081a4d7bcb
 
 //PROTOTIPOS DE JUGADAS
 int generala(int vectorDados[]);
@@ -20,55 +16,6 @@ void jugadasValidas (int vectorIndiceJugadas[], string vectorCategorias[], int v
 
 
 //DESARROLLO:
-<<<<<<< HEAD
-bool generalaServida(int vectorDados[], int tirada){
-    if ( tirada==1 && generala(vectorDados)!=0 ){
-        return true;
-=======
-/*int jugadas(int vectorDados[], int vectorJugador[], int tirada){
-    int puntaje;
-    int coincidencias= -5; //Tiene en cuenta las coincidencias consigo mismo que ocurriran aunque no se repita con otro dado.
-    for(int i=0;i<5;i++){
-        for(int j=0;j<5;j++){
-            if (vectorDados[i]==vectorDados[j]){
-                coincidencias++;
-            }
-        }
-    }
-    switch(coincidencias){
-    case 5:
-        puntaje=generala(vectorJugador, tirada);
-        break;
-    case 4:
-        puntaje=poker(vectorDados);
-        break;
-    case 3:
-        puntaje=full(vectorDados);
-        break;
-    default:
-        puntaje=escalera(vectorJugador,vectorDados);
-        if (puntaje==0){
-        puntaje=puntajeNumero();
-        }
-        break;
-    }
-    return puntaje;
-}
-TODO */
-
-int generala(int vectorJugador[], int tirada){
-    int puntaje = 0;
-    if(tirada==1){
-            finalPartida();
-        //Funcion GANO_EL_JUEGO_QUE_OJETE();
-        // vectorJugador[12] = 1;
-        // puntos = ??; fijarse en el apunte.
->>>>>>> 445446ea7885bd2f84b8efc80f75ba081a4d7bcb
-    } else {
-    return false;
-    }
-}
-
 int generala(int vectorDados[]){
     int puntaje = 50;
     bool repeticiones5=false;
@@ -83,6 +30,13 @@ int generala(int vectorDados[]){
     return puntaje;
 }
 
+bool generalaServida(int vectorDados[], int tirada){
+    if ( tirada==1 && generala(vectorDados)!=0 ){
+        return true;
+    } else {
+        return false;
+    }
+}
 
 int poker(int vectorDados[]){
     int puntaje = 0;
