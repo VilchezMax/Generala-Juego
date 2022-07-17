@@ -8,7 +8,7 @@
 int numeroRandom(void); //Genera un numero aleatorio del 1 al 6. Devuelve el numero generado.
 void primerTiro(int cantDados, int vectorDados[]); //Genera un vector de 5 numeros aleatorios para iniciar el turno. No devuelve, modifica el vectorDados afuera.
 void cambioDado(int cantDados, int vectorDados[]); //Cambia un dado del vector por uno aleatorio. No devuelve, modifica el vectorDados afuera
-int turno1P(int vectorDados[],int vectorJugador[], int cantDados); //Proceso de 1 ronda para 1 jugador. Devuelve int porque devuelve el puntaje final
+void turno1P(int vectorDados[],int cantDados); //Proceso de 1 ronda para 1 jugador. Devuelve int porque devuelve el puntaje final
 
 //DESARROLLO:
 int numeroRandom(void){ //Para randomizado
@@ -24,14 +24,14 @@ void primerTiro(int cantDados, int vectorDados[]){
     srand(time(0));
     for(int i=0;i<cantDados;i++){
         vectorDados[i]=numeroRandom();
-        cout<<vectorDados[i]<<endl; //Quizas esto deberia leerse con una fx especifica?
     }
+        leerDados(vectorDados); //Quizas esto deberia leerse con una fx especifica?
 }
 
 void cambioDado(int cantDados, int vectorDados[]){
     int aCambiar;
     for (int i=0;i<cantDados;i++){
-        cout<<"Dado "<<(i+1)<<" sera:"<<endl;
+        cout<<"En que posicion esta el dado "<<(i+1)<<" que quiera cambiar: "<<endl;
         cin>>aCambiar;
         vectorDados[aCambiar-1]=numeroRandom();
     }
@@ -39,19 +39,30 @@ void cambioDado(int cantDados, int vectorDados[]){
 
 void turno1P(int vectorDados[],int cantDados){
     int opcion;
-    cout<<"Queres cambiar algun dado? 1-SI / 2-NO"<<endl;
-    cin>>opcion;
-    switch (opcion){
-        case 1:
-            cout<<"Cuantos quiere cambiar?"<<endl;
-            cin>>cantDados;
-            cambioDado(cantDados,vectorDados);
+    bool salir=false;
+    for(int i=0;i<2;i++){
+        if(salir==true){
             break;
-        case 2:
-            break;
-        default:
-            cout<<"Ingrese un numero valido"<<endl;
-            break;
+        }
+        cout<<"Queres cambiar algun dado? 1-SI / 2-NO"<<endl;
+        cin>>opcion;
+        switch (opcion){
+            case 1:
+                cout<<"Cuantos quiere cambiar?"<<endl;
+                cin>>cantDados;
+                cambioDado(cantDados,vectorDados);
+                system("cls");
+                cout<<"Sus dados actuales son: "<<endl;
+                leerDados(vectorDados);
+                break;
+            case 2:
+                salir=true;
+
+                break;
+            default:
+                cout<<"Ingrese un numero valido"<<endl;
+                break;
+        }
     }
 
 }
