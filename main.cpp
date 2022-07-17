@@ -26,7 +26,8 @@ int main(){
         cout<<"Presione 1 si es un jugador, 2 si son 2 jugadores u otra tecla para salir"<<endl; //PROVISORIO: ESTE MENU SE HARA CON <RLUTIL>
         int jugadores;
         cin>>jugadores;
-        string vectorCategorias[] = {"Turno","1","2","3","4","5","6","Escalera","Full","Poker","Generala"};
+        string vectorCategorias[] = {"   TURNO","       1","       2","       3","       4",
+                                     "       5","       6","Escalera","    Full","   Poker","Generala"};
 
         switch(jugadores){
          /* -------------- 1 JUGADOR ----------------  */
@@ -46,7 +47,7 @@ int main(){
                 turno1P(vectorDados,cantDados);
                 vectorJugador[0]++;
                 cout<<"Asi quedo tu puntaje:"<<endl; //TODO: Funcion leerVector con vectorPuntajes
-                leerVector(vectorCategorias,vectorJugador, 11);
+                leerVector(nombre,vectorCategorias,vectorJugador, 11);
             }
             imprimirResultados(vectorJugador,nombre,tiradas);
             break;
