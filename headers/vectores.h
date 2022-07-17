@@ -38,31 +38,17 @@ int sumarPuntajes(int vect[], int tamano){   //Fx para sumar puntajes finales
     return suma;
 }
 
-void ordenarVector(int vect[],int tamano){
-    int aux;
-    for (int i=0;i<tamano;i++){
-        for (int j=0;j<tamano-1;j++){
-            if (vect[j]>vect[j+1]){
-                aux=vect[j];
-                vect[j]=vect[j+1];
-                vect[j+1]=aux;
-            }
-        }
-    }
-}
-
-/*void ordenarVectorr(int vect[], int tamano){
+void ordenarVector(int vect[], int tamano){
     while(!(vect[0]<vect[1] && vect[1]<vect[2] && vect[2]<vect[3] && vect[3]<vect[4])){
         for(int i=0;i<tamano;i++){
             if(vect[i]>vect[i+1]){
-                int temp = vect[i];
+                int temp = vect[i+1];
                 vect[i+1]= vect[i];
-                vect[i+1]= temp;
+                vect[i]= temp;
             }
         }
     }
 }
-*/
 
 void leerDados(int vectorDados[]){
     system("cls");
@@ -70,7 +56,6 @@ void leerDados(int vectorDados[]){
     system("cls");
     for(int i=0;i<5;i++){
         dibujosDados(vectorDados[i]);
-        //cout<<vectorDados[i]<<endl;
     }
 }
 

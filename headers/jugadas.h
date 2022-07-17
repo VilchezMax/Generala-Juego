@@ -11,16 +11,13 @@ int poker(int vectorDados[]);
 int full(int vectorDados[]);
 int escalera(int vectorDados[]);
 int puntajeNumero (int vectorDados[], int numeroPuntaje);
-void evaluacionJugadas(int vectorDados[],int vectorIndiceJugadas[]);
-void jugadasValidas (int vectorIndiceJugadas[], string vectorCategorias[], int vectorJugador[]);
+void evaluacionJugadas(int vectorDados[],int vectorPuntajesValidos[]);
+void jugadasValidas (int vectorPuntajesValidos[], string vectorCategorias[], int vectorJugador[],int vectorOpciones[]);
 
 
 //DESARROLLO:
 int generala(int vectorDados[]){
     int puntaje = 50;
-    bool repeticiones5=false;
-    int contRepeticiones;
-
     for (int i=0;i<5;i++){
         for(int j=0;j<5;j++){
             if (vectorDados[i] != vectorDados[j]){
@@ -110,50 +107,49 @@ int puntajeNumero(int vectorDados[], int numeroPuntaje){
     return puntaje;
 }
 
-void evaluacionJugadas(int vectorDados[],int vectorIndiceJugadas[]){
-    vectorIndiceJugadas[10]=generala(vectorDados);
-    vectorIndiceJugadas[9]=poker(vectorDados);
-    vectorIndiceJugadas[8]=full(vectorDados);
-    vectorIndiceJugadas[7]=escalera(vectorDados);
-    vectorIndiceJugadas[6]=puntajeNumero(vectorDados,6);
-    vectorIndiceJugadas[5]=puntajeNumero(vectorDados,5);
-    vectorIndiceJugadas[4]=puntajeNumero(vectorDados,4);
-    vectorIndiceJugadas[3]=puntajeNumero(vectorDados,3);
-    vectorIndiceJugadas[2]=puntajeNumero(vectorDados,2);
-    vectorIndiceJugadas[1]=puntajeNumero(vectorDados,1);
+void evaluacionJugadas(int vectorDados[],int vectorPuntajesValidos[]){
+    vectorPuntajesValidos[10]=generala(vectorDados);
+    vectorPuntajesValidos[9]=poker(vectorDados);
+    vectorPuntajesValidos[8]=full(vectorDados);
+    vectorPuntajesValidos[7]=escalera(vectorDados);
+    vectorPuntajesValidos[6]=puntajeNumero(vectorDados,6);
+    vectorPuntajesValidos[5]=puntajeNumero(vectorDados,5);
+    vectorPuntajesValidos[4]=puntajeNumero(vectorDados,4);
+    vectorPuntajesValidos[3]=puntajeNumero(vectorDados,3);
+    vectorPuntajesValidos[2]=puntajeNumero(vectorDados,2);
+    vectorPuntajesValidos[1]=puntajeNumero(vectorDados,1);
 }
 
-void jugadasValidas (int vectorIndiceJugadas[],string vectorCategorias[], int vectorJugador[], int vectorOpciones[]){
+void jugadasValidas (int vectorPuntajesValidos[],string vectorCategorias[], int vectorJugador[], int vectorOpciones[]){
     int opcion=0;
     int eleccion;
     cout<<"Usted puede elegir entre las siguientes jugadas:"<<endl;
     for (int i=10;i<=1;i++){
-        if (vectorIndiceJugadas[i]!=0 && vectorJugador[i]!= -1 ){
-            cout<<opcion+1<<")"<<vectorCategorias[vectorIndiceJugadas[i]]<<" - puntos: "<<vectorIndiceJugadas[i]<<endl;
+        if (vectorPuntajesValidos[i]!=0 && vectorJugador[i]!= -1 ){
+            cout<<opcion+1<<")"<<vectorCategorias[i]<<" - puntos: "<<vectorPuntajesValidos[i]<<endl;
             vectorOpciones[opcion]=i;
             opcion++;
             //TERMINAR
         }
     }
-    cout<<"Elija la jugada:"<<endl;
-    cin>>eleccion;
-    vectorJugador[vectorOpciones[eleccion]]=vectorIndiceJugadas[vectorOpciones[eleccion]];
 
     if(opcion==0){
-        cout<<"No hay jugadas disponibles,tiene que elegir entre las siguientes jugadas para invalidar:"<<endl;
+        cout<<"No hay jugadas disponibles, tiene que anular alguna de las siguientes:"<<endl;
         for (int i=10;i<=1;i++){
-            if (vectorJugador[i]==-1){
+            if (vectorJugador[i]== -1){
                 cout<<opcion+1<<")"<<vectorCategorias[i]<<endl;
                 vectorOpciones[opcion]=i;
                 opcion++;
             }
         }
     }
-    //COPIAR Y PEGAR LA RESOLUCION ANTERIOR (ELECCIOND E JUGADA A INVALIDAR)
-    //CHEQUEAR QUE ESTE BIEN LA LOGICA DE LA LINEA 138 SOBRE LOS INDICES
-    //REFACTORIZAR  NOMBRE DE vectorIndiceJugadas A vectorPuntajesValidos
-    //
-
+        cout<<"Elija la jugada:"<<endl;
+        cin>>eleccion;
+    if(opcion>0){
+        vectorJugador[vectorOpciones[eleccion-1]]=vectorPuntajesValidos[vectorOpciones[eleccion-1]];
+    } else{
+        vectorJugador[vectorOpciones[eleccion-1]]= 0;
+    }
 }
 
 #endif // JUGADAS_H_INCLUDED

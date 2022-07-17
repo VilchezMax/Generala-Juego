@@ -7,20 +7,14 @@ using namespace std;
 #include "headers/vectores.h"
 #include "headers/jugadas.h"
 #include "headers/finalPartida.h"
-#
+#include "headers/dibujosDados.h"
 
-/* VECTOR PUNTAJES: 13 espacios ([12])
-   vectorPuntajes[]={"Turno","1","2","3","4","5","6","Escalera","Full","Poker","Generala","Generala Servida"}
-   VECTOR JUGADOR[13];
-
+/*
    PUNTAJES
    ESCALERA:25
    FULL:30
    POKER:40
    GENERALA:50
-*/
-
-/* EVALUACION JUGADAS, IF TRUE = GUARDAR EN UN ARRAT NUEVO LA POSICION DE ESA JUGADA EN EL VECTORCATEGORIAS.
 */
 int main(){
     bool jugar = true;
@@ -29,7 +23,7 @@ int main(){
         cout<<"Presione: "<<endl;
         cout<<"1 - Modo un jugador"<<endl;
         cout<<"2 - Ver puntajes maximos"<<endl;
-        cout<<"Otra tecla para salir"<<endl; //PROVISORIO: ESTE MENU SE HARA CON <RLUTIL>
+        cout<<"Otra tecla para salir"<<endl;
 
         int jugadores;
         cin>>jugadores;
@@ -44,11 +38,12 @@ int main(){
             cin>>nombre;
             int vectorDados[5];
             int vectorJugador[]={0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
-            int vectorIndiceJugadas[10]; //turnos no cuenta
+            int vectorPuntajesValidos[10]; //turnos no cuenta
             int vectorOpciones[10];
             int tiradas = 0;
             int const turnos=10;
-            int puntajeFinal,tamano;
+            int puntajeFinal;
+            int tamano=sizeof(vectorJugador);
             int cantDados=5;
             bool servida=false;
 
@@ -63,16 +58,14 @@ int main(){
                 if (servida==true){
                     diaDeSuerte();
                     break;
-                } else {
-                    evaluacionJugadas(vectorDados,vectorIndiceJugadas);
                 }
-
-
-                //Evaluar juegos posibles
+                evaluacionJugadas(vectorDados,vectorPuntajesValidos);
+                jugadasValidas(vectorPuntajesValidos,vectorCategorias,vectorJugador,vectorOpciones);
                 cout<<"Asi quedo tu puntaje:"<<endl;
                 leerVector(nombre,vectorCategorias,vectorJugador, 11);
                 puntajeFinal=sumarPuntajes(vectorJugador,tamano);
                 cout<<"Su puntaje actual es: "<<puntajeFinal<<endl;
+
             }
             imprimirResultados(vectorJugador,nombre,tiradas);
             break;
