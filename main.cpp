@@ -27,8 +27,8 @@ int main(){
     while(jugar){
         system("cls");
         cout<<"Presione: "<<endl;
-        cout<<"1: Si es un jugador"<<endl;
-        cout<<"2: Si son 2 jugadores(proximamente)"<<endl;
+        cout<<"1 - Modo un jugador"<<endl;
+        cout<<"2 - Ver puntajes maximos"<<endl;
         cout<<"Otra tecla para salir"<<endl; //PROVISORIO: ESTE MENU SE HARA CON <RLUTIL>
 
         int jugadores;
@@ -78,42 +78,7 @@ int main(){
             break;
 
         }
-      /* -------------- 2 JUGADORES ----------------  */
 
-/* 2PLAYERS
-        case 2:{
-            string nombre1,nombre2;
-            cout<<"Ingrese el nombre del jugador 1: "<<endl;
-            cin>>nombre1;
-            cout<<"Ingrese el nombre del jugador 2: "<<endl;
-            cin>>nombre2;
-            int tiradasJ1 = 0;
-            int tiradasJ2 = 0;
-            int vectorDados[5];
-
-            //ESTO HAY QUE REVISARLO PORQUE ASI NO FUNCIONAN LOS ARRAYS DE STRINGS.
-            int vectorJugador1[12];
-            int vectorJugador2[12];
-            int tirada,turno,puntajeFinal;
-            for (int i=0;i<10;i++){
-                turno1P(vectorDados[],vectorJugador1[]);
-                vectorJugador1[0]++;
-                turno1P(vectorDados[],vectorJugador2[]);
-                vectorJugador2[0]++;
-            }
-            //PROCESO 2 JUGADORES.
-            // aca iria un for con 2 secuencias adentro, osea 1 para player 1 y otra para player2 intercalados.
-            int * ganador;
-            if(sumarVector(vectorJugador1,13)>sumarVector(vectorJugador2,13)){
-                ganador=vectorJugador1;
-            } else if (sumarVector(vectorJugador2,13)>sumarVector(vectorJugador1,13)){
-                ganador=vectorJugador2;
-            } else {
-                //ganador=vectorPuntajes;??? hacer algo con esto para marcar que es EMPATE algo con que gane el que menos tiradas hizo
-            }
-            imprimirGanador(ganador,nombre1,tiradasJ1);
-            break;
-}*/
         /*case 3:{
 
         }*/
