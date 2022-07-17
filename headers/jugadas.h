@@ -2,68 +2,42 @@
 #define JUGADAS_H_INCLUDED
 
 #include "vectores.h"
+#include "finalpartida.h"
 
-//PROTOTIPOS DE JUGADAS:
-int jugadas(int vectorDados[]); //Aca van todas las funciones de jugadas:
-
-int generala(int vectorJugador[], int tirada);
+//PROTOTIPOS DE JUGADAS
+int generala(int vectorDados[]);
+bool generalaServida(int vectorDados[], int tirada);
 int poker(int vectorDados[]);
 int full(int vectorDados[]);
-int escalera(int vectorJugador[], int vectorDados[]);
+int escalera(int vectorDados[]);
 int puntajeNumero (int vectorDados[], int numeroPuntaje);
+void evaluacionJugadas(int vectorDados[],int vectorIndiceJugadas[]);
+void jugadasValidas (int vectorIndiceJugadas[], string vectorCategorias[], int vectorJugador[]);
 
 
 //DESARROLLO:
-/*int jugadas(int vectorDados[], int vectorJugador[], int tirada){
-    int puntaje;
-    int coincidencias= -5; //Tiene en cuenta las coincidencias consigo mismo que ocurriran aunque no se repita con otro dado.
-    for(int i=0;i<5;i++){
-        for(int j=0;j<5;j++){
-            if (vectorDados[i]==vectorDados[j]){
-                coincidencias++;
-            }
-        }
-    }
-    switch(coincidencias){
-    case 5:
-        puntaje=generala(vectorJugador, tirada);
-        break;
-    case 4:
-        puntaje=poker(vectorDados);
-        break;
-    case 3:
-        puntaje=full(vectorDados);
-        break;
-    default:
-        puntaje=escalera(vectorJugador,vectorDados);
-        if (puntaje==0){
-        puntaje=puntajeNumero();
-        }
-        break;
-    }
-    return puntaje;
-}
-TODO */
-
-int generala(int vectorJugador[], int tirada){
-    int puntaje = 0;
-    if(tirada==1){
-        //Funcion GANO_EL_JUEGO_QUE_OJETE();
-        // vectorJugador[12] = 1;
-        // puntos = ??; fijarse en el apunte.
+bool generalaServida(int vectorDados[], int tirada){
+    if ( tirada==1 && generala(vectorDados)!=0 ){
+        return true;
     } else {
-        puntaje=50;
+    return false;
     }
-    /*
-    } else if ((vectorJugador[10]==0) && (tirada==2 || tirada==3)){
-        puntaje=50;
-    } else if (vectorJugador[10] !=0 && vectorJugador[11]==0){
-        puntaje=50;
-    }
-    */
+}
 
+int generala(int vectorDados[]){
+    int puntaje = 50;
+    bool repeticiones5=false;
+    int contRepeticiones;
+
+    for (int i=0;i<5;i++){
+        for(int j=0;j<5;j++){
+            if (vectorDados[i] != vectorDados[j]){
+                puntaje=0;}
+        }
+    }
     return puntaje;
 }
+
 
 int poker(int vectorDados[]){
     int puntaje = 0;
@@ -134,5 +108,50 @@ int puntajeNumero(int vectorDados[], int numeroPuntaje){
     return puntaje;
 }
 
+void evaluacionJugadas(int vectorDados[],int vectorIndiceJugadas[]){
+    vectorIndiceJugadas[10]=generala(vectorDados);
+    vectorIndiceJugadas[9]=poker(vectorDados);
+    vectorIndiceJugadas[8]=full(vectorDados);
+    vectorIndiceJugadas[7]=escalera(vectorDados);
+    vectorIndiceJugadas[6]=puntajeNumero(vectorDados,6);
+    vectorIndiceJugadas[5]=puntajeNumero(vectorDados,5);
+    vectorIndiceJugadas[4]=puntajeNumero(vectorDados,4);
+    vectorIndiceJugadas[3]=puntajeNumero(vectorDados,3);
+    vectorIndiceJugadas[2]=puntajeNumero(vectorDados,2);
+    vectorIndiceJugadas[1]=puntajeNumero(vectorDados,1);
+}
+
+void jugadasValidas (int vectorIndiceJugadas[],string vectorCategorias[], int vectorJugador[], int vectorOpciones[]){
+    int opcion=0;
+    int eleccion;
+    cout<<"Usted puede elegir entre las siguientes jugadas:"<<endl;
+    for (int i=10;i<=1;i++){
+        if (vectorIndiceJugadas[i]!=0 && vectorJugador[i]!= -1 ){
+            cout<<opcion+1<<")"<<vectorCategorias[vectorIndiceJugadas[i]]<<" - puntos: "<<vectorIndiceJugadas[i]<<endl;
+            vectorOpciones[opcion]=i;
+            opcion++;
+            //TERMINAR
+        }
+    }
+    cout<<"Elija la jugada:"<<endl;
+    cin>>eleccion;
+    vectorJugador[vectorOpciones[eleccion]]=vectorIndiceJugadas[vectorOpciones[eleccion]];
+
+    if(opcion==0){
+        cout<<"No hay jugadas disponibles,tiene que elegir entre las siguientes jugadas para invalidar:"<<endl;
+        for (int i=10;i<=1;i++){
+            if (vectorJugador[i]==-1){
+                cout<<opcion+1<<")"<<vectorCategorias[i]<<endl;
+                vectorOpciones[opcion]=i;
+                opcion++;
+            }
+        }
+    }
+    //COPIAR Y PEGAR LA RESOLUCION ANTERIOR (ELECCIOND E JUGADA A INVALIDAR)
+    //CHEQUEAR QUE ESTE BIEN LA LOGICA DE LA LINEA 138 SOBRE LOS INDICES
+    //REFACTORIZAR  NOMBRE DE vectorIndiceJugadas A vectorPuntajesValidos
+    //
+
+}
 
 #endif // JUGADAS_H_INCLUDED

@@ -7,6 +7,7 @@ using namespace std;
 #include "headers/vectores.h"
 #include "headers/jugadas.h"
 #include "headers/finalPartida.h"
+#
 
 /* VECTOR PUNTAJES: 13 espacios ([12])
    vectorPuntajes[]={"Turno","1","2","3","4","5","6","Escalera","Full","Poker","Generala","Generala Servida"}
@@ -19,18 +20,17 @@ using namespace std;
    GENERALA:50
 */
 
+/* EVALUACION JUGADAS, IF TRUE = GUARDAR EN UN ARRAT NUEVO LA POSICION DE ESA JUGADA EN EL VECTORCATEGORIAS.
+*/
 int main(){
     bool jugar = true;
     while(jugar){
         system("cls");
-<<<<<<< HEAD
-        cout<<"Presione 1 para jugar"<<endl; //PROVISORIO: ESTE MENU SE HARA CON <RLUTIL>
-=======
         cout<<"Presione: "<<endl;
         cout<<"1: Si es un jugador"<<endl;
         cout<<"2: Si son 2 jugadores(proximamente)"<<endl;
         cout<<"Otra tecla para salir"<<endl; //PROVISORIO: ESTE MENU SE HARA CON <RLUTIL>
->>>>>>> 1c7a8003f2db07c7b139a99f24aacf69b3da9744
+
         int jugadores;
         cin>>jugadores;
         string vectorCategorias[] = {"   TURNO","       1","       2","       3","       4",
@@ -44,18 +44,32 @@ int main(){
             cin>>nombre;
             int vectorDados[5];
             int vectorJugador[]={0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+            int vectorIndiceJugadas[10]; //turnos no cuenta
+            int vectorOpciones[10];
             int tiradas = 0;
             int const turnos=10;
             int puntajeFinal,tamano;
             int cantDados=5;
+            bool servida=false;
+
             cout<<"Sus dados son: "<<endl;
             primerTiro(cantDados,vectorDados);
 
             for (int i=0;i<turnos;i++){
                 turno1P(vectorDados,cantDados);
                 vectorJugador[0]++;
+                //EVALUACIONES
+                servida=generalaServida(vectorJugador,tiradas);
+                if (servida==true){
+                    diaDeSuerte();
+                    break;
+                } else {
+                    evaluacionJugadas(vectorDados,vectorIndiceJugadas);
+                }
+
+
                 //Evaluar juegos posibles
-                cout<<"Asi quedo tu puntaje:"<<endl; //TODO: Funcion leerVector con vectorPuntajes
+                cout<<"Asi quedo tu puntaje:"<<endl;
                 leerVector(nombre,vectorCategorias,vectorJugador, 11);
                 puntajeFinal=sumarPuntajes(vectorJugador,tamano);
                 cout<<"Su puntaje actual es: "<<puntajeFinal<<endl;

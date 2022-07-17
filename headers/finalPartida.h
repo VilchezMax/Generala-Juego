@@ -2,11 +2,10 @@
 #define FINALPARTIDA_H_INCLUDED
 
 
-// HAY QUE ARREGLAR TODO LO QUE SEA STRING/CHAR NOMBRE JUGADOR
 
 //PROTOTIPOS:
 void imprimirResultados(int vectorJugador[], char nombreJugador[], int tiradas);
-bool diaDeSuerte(string nombre); //Funcion que se ejecuta cuando hay generala servida;
+bool diaDeSuerte(void); //Funcion que se ejecuta cuando hay generala servida;
 
 
 
@@ -23,9 +22,8 @@ void imprimirResultados(int vectorJugador[], string nombreJugador, int tiradas){
     cout<<"Conseguidos tirando los dados "<<tiradas<<" veces"<<endl;
 }
 
-bool diaDeSuerte(string nombre){
+bool diaDeSuerte(void){
     system("cls");
-    cout<<nombre<<" ..."<<endl;
     cout<<"!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡"<<endl;
     cout<<"!¡!¡  SACASTE GENERALA SERVIDA  ¡!¡!"<<endl;
     cout<<"!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡!¡"<<endl;

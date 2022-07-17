@@ -2,7 +2,7 @@
 #define DIBUJOSDADOS_H_INCLUDED
 
 //PROTOTIPOS:
-void dibujoDados(int dado); //Dibuja los dados en funcion del numero que recibe del vectorDados
+void dibujosDados(int dado); //Dibuja los dados en funcion del numero que recibe del vectorDados
 
 void uno(void); //Dibujos para cada dado
 void dos(void);
@@ -14,6 +14,83 @@ void seis(void);
 void vaso1(void); //Vasos para animacion
 
 //DEFINICIONES:
+void vaso1(void){
+    cout <<"            ________________         "<< endl;
+    cout <<"           (________________)        "<< endl;
+    cout <<"           \\               /        "<< endl;
+    cout <<"       (((  \\             /         "<< endl;
+    cout <<"             \\           /          "<< endl;
+    cout <<"              \\         /  )))      "<< endl;
+    cout <<"               \\_______/            "<< endl;
+}
+void vaso2(void){
+    cout <<"                ________________       "<< endl;
+    cout <<"               (________________)      "<< endl;
+    cout <<"               \\               /      "<< endl;
+    cout <<"                \\             /   ))) "<< endl;
+    cout <<"            (((  \\           /        "<< endl;
+    cout <<"                  \\         /         "<< endl;
+    cout <<"                   \\_______/          "<< endl;
+}
+void uno(void){
+    cout<<"        __________ "<<endl;
+    cout<<"       |          |"<<endl;
+    cout<<"       |          |"<<endl;
+    cout<<"       |     *    |"<<endl;
+    cout<<"       |          |"<<endl;
+    cout<<"       |__________|"<<endl;
+
+}
+void dos(void){
+    cout<<"      __________ "<<endl;
+    cout<<"     |          |"<<endl;
+    cout<<"     |  *       |"<<endl;
+    cout<<"     |          |"<<endl;
+    cout<<"     |       *  |"<<endl;
+    cout<<"     |__________|"<<endl;
+
+}
+
+void tres(void){
+    cout<<" __________ "<<endl;
+    cout<<"|          |"<<endl;
+    cout<<"|  *       |"<<endl;
+    cout<<"|     *    |"<<endl;
+    cout<<"|        * |"<<endl;
+    cout<<"|__________|"<<endl;
+
+}
+
+void cuatro(void){
+    cout<<"    __________ "<<endl;
+    cout<<"   |          |"<<endl;
+    cout<<"   |  *    *  |"<<endl;
+    cout<<"   |          |"<<endl;
+    cout<<"   |  *    *  |"<<endl;
+    cout<<"   |__________|"<<endl;
+
+}
+
+void cinco(void){
+    cout<<"         __________ "<<endl;
+    cout<<"        |          |"<<endl;
+    cout<<"        |  *    *  |"<<endl;
+    cout<<"        |     *    |"<<endl;
+    cout<<"        |  *    *  |"<<endl;
+    cout<<"        |__________|"<<endl;
+
+}
+
+void seis(void){
+    cout<<"  __________ "<<endl;
+    cout<<" |          |"<<endl;
+    cout<<" |  *    *  |"<<endl;
+    cout<<" |  *    *  |"<<endl;
+    cout<<" |  *    *  |"<<endl;
+    cout<<" |__________|"<<endl;
+
+}
+
 void dibujosDados(int dado){
     switch (dado){
     case 1:
@@ -37,83 +114,19 @@ void dibujosDados(int dado){
     }
 }
 
-void uno(void){
-    cout<<"    __________ "<<endl;
-    cout<<"   |          |"<<endl;
-    cout<<"   |          |"<<endl;
-    cout<<"   |     *    |"<<endl;
-    cout<<"   |          |"<<endl;
-    cout<<"   |__________|"<<endl;
+
+
+void vasos(void){
+    for(int i=0;i<2;i++){
+        vaso1();
+        system("pause");
+        system("cls");
+        vaso2();
+        system("pause");
+        system("cls");
+    }
+    vaso1();
 
 }
-void dos(void){
-    cout<<"  __________ "<<endl;
-    cout<<" |          |"<<endl;
-    cout<<" |  *       |"<<endl;
-    cout<<" |          |"<<endl;
-    cout<<" |       *  |"<<endl;
-    cout<<" |__________|"<<endl;
-
-}
-
-void tres(void){
-    cout<<" __________ "<<endl;
-    cout<<"|          |"<<endl;
-    cout<<"|  *       |"<<endl;
-    cout<<"|     *    |"<<endl;
-    cout<<"|        * |"<<endl;
-    cout<<"|__________|"<<endl;
-
-}
-
-void cuatro(void){
-    cout<<" __________ "<<endl;
-    cout<<"|          |"<<endl;
-    cout<<"|  *    *  |"<<endl;
-    cout<<"|          |"<<endl;
-    cout<<"|  *    *  |"<<endl;
-    cout<<"|__________|"<<endl;
-
-}
-
-void cincos(void){
-    cout<<"    __________ "<<endl;
-    cout<<"   |          |"<<endl;
-    cout<<"   |  *    *  |"<<endl;
-    cout<<"   |     *    |"<<endl;
-    cout<<"   |  *    *  |"<<endl;
-    cout<<"   |__________|"<<endl;
-
-}
-
-void seis(void){
-    cout<<"  __________ "<<endl;
-    cout<<" |          |"<<endl;
-    cout<<" |  *    *  |"<<endl;
-    cout<<" |  *    *  |"<<endl;
-    cout<<" |  *    *  |"<<endl;
-    cout<<" |__________|"<<endl;
-
-}
-
-void vaso1(void){
-    cout <<"            ________________         "<< endl;
-    cout <<"           (________________)        "<< endl;
-    cout <<"           \\               /        "<< endl;
-    cout <<"       (((  \\             /         "<< endl;
-    cout <<"             \\           /          "<< endl;
-    cout <<"              \\         /  )))      "<< endl;
-    cout <<"               \\_______/            "<< endl;
-}
-void vaso2(void){
-    cout <<"                ________________       "<< endl;
-    cout <<"               (________________)      "<< endl;
-    cout <<"               \\               /      "<< endl;
-    cout <<"                \\             /   ))) "<< endl;
-    cout <<"            (((  \\           /        "<< endl;
-    cout <<"                  \\         /         "<< endl;
-    cout <<"                   \\_______/          "<< endl;
-}
-
 
 #endif // DIBUJOSDADOS_H_INCLUDED

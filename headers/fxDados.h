@@ -1,7 +1,9 @@
 #ifndef FXDADOS_H_INCLUDED
 #define FXDADOS_H_INCLUDED
 #include <time.h>
+
 #include "vectores.h"
+#include "jugadas.h"
 
 //PROTOTIPOS:
 
@@ -57,10 +59,10 @@ void turno1P(int vectorDados[],int cantDados){
                 break;
             case 2:
                 salir=true;
-
                 break;
             default:
                 cout<<"Ingrese un numero valido"<<endl;
+                i--;
                 break;
         }
     }

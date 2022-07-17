@@ -1,6 +1,8 @@
 #ifndef VECTORES_H_INCLUDED
 #define VECTORES_H_INCLUDED
 
+#include "dibujosDados.h"
+
 
 
 //PROTOTIPOS:
@@ -61,9 +63,14 @@ void ordenarVector(int vect[],int tamano){
     }
 }
 */
+
 void leerDados(int vectorDados[]){
+    system("cls");
+    vasos();
+    system("cls");
     for(int i=0;i<5;i++){
-        cout<<vectorDados[i]<<endl;
+        dibujosDados(vectorDados[i]);
+        //cout<<vectorDados[i]<<endl;
     }
 }
 
