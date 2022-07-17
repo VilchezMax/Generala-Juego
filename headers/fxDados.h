@@ -27,7 +27,6 @@ void primerTiro(int cantDados, int vectorDados[]){
     for(int i=0;i<cantDados;i++){
         vectorDados[i]=numeroRandom();
     }
-        leerDados(vectorDados); //Quizas esto deberia leerse con una fx especifica?
 }
 
 void cambioDado(int cantDados, int vectorDados[]){
@@ -52,7 +51,11 @@ void turno1P(int vectorDados[],int cantDados, int &tiradas){
             case 1:
                 cout<<"Cuantos quiere cambiar?"<<endl;
                 cin>>cantDados;
-                cambioDado(cantDados,vectorDados);
+                if (cantDados==5){
+                    primerTiro(cantDados,vectorDados);
+                }else{
+                    cambioDado(cantDados,vectorDados);
+                }
                 system("cls");
                 cout<<"Sus dados actuales son: "<<endl;
                 leerDados(vectorDados);

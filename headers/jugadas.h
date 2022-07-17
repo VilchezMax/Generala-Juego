@@ -118,9 +118,6 @@ void evaluacionJugadas(int vectorDados[],int vectorPuntajesValidos[]){
     vectorPuntajesValidos[3]=puntajeNumero(vectorDados,3);
     vectorPuntajesValidos[2]=puntajeNumero(vectorDados,2);
     vectorPuntajesValidos[1]=puntajeNumero(vectorDados,1);
-    for (int i=10;i>=1;i--){
-        cout<<"indice "<<i<<" - "<<vectorPuntajesValidos[i]<<endl;
-    }
 }
 
 void jugadasValidas (int vectorPuntajesValidos[],string vectorCategorias[], int vectorJugador[], int vectorOpciones[]){

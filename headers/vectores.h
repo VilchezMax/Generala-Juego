@@ -25,8 +25,13 @@ void leerVector(string nombre,string vectCategorias[], int vectJugador[], int ta
         cout<<"|  JUGADOR | "<<nombre<<endl;
         cout<<" ----------------"<<endl;
     for (int i=0;i<tamano;i++){
-        cout<<"| "<<vectCategorias[i]<<" | "<<vectJugador[i]<<endl;
-        cout<<" ----------------"<<endl;
+        if(vectJugador[i]==-1){
+            cout<<"| "<<vectCategorias[i]<<" | "<<" - "<<endl;
+            cout<<" ----------------"<<endl;
+        }else{
+            cout<<"| "<<vectCategorias[i]<<" | "<<vectJugador[i]<<endl;
+            cout<<" ----------------"<<endl;
+        }
     }
 }
 

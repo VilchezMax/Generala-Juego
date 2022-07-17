@@ -49,7 +49,7 @@ int main(){
             int vectorPuntajesValidos[10]; //[0] cuenta turnos, no cuenta
             int vectorOpciones[10];
             int puntajeFinal;
-            int tamano=sizeof(vectorJugador);
+            int tamano=sizeof(vectorJugador)/sizeof(vectorJugador[0]);
             int cantDados=5;
             bool servida=false;
             int acumTiradas=0;
@@ -59,6 +59,7 @@ int main(){
 
                 cout<<"Sus dados son: "<<endl;
                 primerTiro(cantDados,vectorDados);
+                leerDados(vectorDados);
                 tiradas++;
                 turno1P(vectorDados,cantDados,tiradas);
                 vectorJugador[0]++;
@@ -75,7 +76,7 @@ int main(){
                 system("cls");
                 //ACA EMPIEZA CARTEL FINL TURNO:
                 cout<<"      PUNTAJE"<<endl<<endl;
-                leerVector(nombre,vectorCategorias,vectorJugador, 11);
+                leerVector(nombre,vectorCategorias,vectorJugador, tamano);
                 puntajeFinal=sumarPuntajes(vectorJugador,tamano);
                 cout<<"PUNTAJE ACTUAL: "<<puntajeFinal<<" PUNTOS"<<endl;
                 cout<<"LANZAMIENTOS: "<<acumTiradas<<endl;
