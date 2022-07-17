@@ -84,7 +84,8 @@ int full(int vectorDados[]){
 }
 
 int escalera(int vectorDados[]){
-    int puntaje = 0, contador = 0;
+    int puntaje = 0;
+    int contador = 0;
     ordenarVector(vectorDados,5);
     for (int i=0;i<5;i++){
         if(vectorDados[i]+1 == vectorDados[i+1]){
@@ -132,7 +133,6 @@ void jugadasValidas (int vectorPuntajesValidos[],string vectorCategorias[], int 
             //TERMINAR
         }
     }
-
     if(opcion==0){
         cout<<"No hay jugadas disponibles, tiene que anular alguna de las siguientes:"<<endl;
         for (int i=10;i<=1;i++){

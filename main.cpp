@@ -38,20 +38,21 @@ int main(){
             cin>>nombre;
             int vectorDados[5];
             int vectorJugador[]={0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
-            int vectorPuntajesValidos[10]; //turnos no cuenta
+            int vectorPuntajesValidos[10]; //[0] cuenta turnos, no cuenta
             int vectorOpciones[10];
-            int tiradas = 0;
             int const turnos=10;
             int puntajeFinal;
             int tamano=sizeof(vectorJugador);
             int cantDados=5;
             bool servida=false;
-
-            cout<<"Sus dados son: "<<endl;
-            primerTiro(cantDados,vectorDados);
+            int acumTiradas=0;
 
             for (int i=0;i<turnos;i++){
-                turno1P(vectorDados,cantDados);
+                int tiradas = 0;
+                cout<<"Sus dados son: "<<endl;
+                primerTiro(cantDados,vectorDados);
+                tiradas++;
+                turno1P(vectorDados,cantDados,tiradas);
                 vectorJugador[0]++;
                 //EVALUACIONES
                 servida=generalaServida(vectorJugador,tiradas);
@@ -65,9 +66,9 @@ int main(){
                 leerVector(nombre,vectorCategorias,vectorJugador, 11);
                 puntajeFinal=sumarPuntajes(vectorJugador,tamano);
                 cout<<"Su puntaje actual es: "<<puntajeFinal<<endl;
-
+                acumTiradas+=tiradas;
             }
-            imprimirResultados(vectorJugador,nombre,tiradas);
+            imprimirResultados(vectorJugador,nombre,acumTiradas);
             break;
 
         }

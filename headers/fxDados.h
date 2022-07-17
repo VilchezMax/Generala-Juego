@@ -10,7 +10,7 @@
 int numeroRandom(void); //Genera un numero aleatorio del 1 al 6. Devuelve el numero generado.
 void primerTiro(int cantDados, int vectorDados[]); //Genera un vector de 5 numeros aleatorios para iniciar el turno. No devuelve, modifica el vectorDados afuera.
 void cambioDado(int cantDados, int vectorDados[]); //Cambia un dado del vector por uno aleatorio. No devuelve, modifica el vectorDados afuera
-void turno1P(int vectorDados[],int cantDados); //Proceso de 1 ronda para 1 jugador. Devuelve int porque devuelve el puntaje final
+void turno1P(int vectorDados[],int cantDados, int &tiradas); //Proceso de 1 ronda para 1 jugador. Devuelve int porque devuelve el puntaje final
 
 //DESARROLLO:
 int numeroRandom(void){ //Para randomizado
@@ -39,7 +39,7 @@ void cambioDado(int cantDados, int vectorDados[]){
     }
 }
 
-void turno1P(int vectorDados[],int cantDados){
+void turno1P(int vectorDados[],int cantDados, int &tiradas){
     int opcion;
     bool salir=false;
     for(int i=0;i<2;i++){
@@ -56,6 +56,7 @@ void turno1P(int vectorDados[],int cantDados){
                 system("cls");
                 cout<<"Sus dados actuales son: "<<endl;
                 leerDados(vectorDados);
+                tiradas++;
                 break;
             case 2:
                 salir=true;
@@ -66,7 +67,6 @@ void turno1P(int vectorDados[],int cantDados){
                 break;
         }
     }
-
 }
 
 

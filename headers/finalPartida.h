@@ -4,17 +4,17 @@
 
 
 //PROTOTIPOS:
-void imprimirResultados(int vectorJugador[], char nombreJugador[], int tiradas);
+void imprimirResultados(int vectorJugador[], string nombreJugador, int acumTiradas);
 bool diaDeSuerte(void); //Funcion que se ejecuta cuando hay generala servida;
 
 
 
 //DESARROLLOS:
-void imprimirResultados(int vectorJugador[], string nombreJugador, int tiradas){
+void imprimirResultados(int vectorJugador[], string nombreJugador, int acumTiradas){
     int puntajeFinal = sumarPuntajes(vectorJugador,11);
     cout<<"El puntaje conseguid por: "<<nombreJugador<<endl;
     cout<<"Fue de : "<<puntajeFinal<<" puntos!!!!"<<endl;
-    cout<<"Conseguidos tirando los dados "<<tiradas<<" veces"<<endl;
+    cout<<"Conseguidos tirando los dados "<<acumTiradas<<" veces"<<endl;
 }
 
 bool diaDeSuerte(void){

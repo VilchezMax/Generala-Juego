@@ -39,13 +39,16 @@ int sumarPuntajes(int vect[], int tamano){   //Fx para sumar puntajes finales
 }
 
 void ordenarVector(int vect[], int tamano){
-    while(!(vect[0]<vect[1] && vect[1]<vect[2] && vect[2]<vect[3] && vect[3]<vect[4])){
-        for(int i=0;i<tamano;i++){
-            if(vect[i]>vect[i+1]){
-                int temp = vect[i+1];
-                vect[i+1]= vect[i];
-                vect[i]= temp;
+    int i,j, posmin, aux;
+    for(i=0;i<tamano-1;i++){
+        posmin=i;
+        for(j=i+1;j<tamano;j++){
+            if(vect[j]<vect[posmin]){
+            posmin=j;
             }
+        aux=vect[i];
+        vect[i]=vect[posmin];
+        vect[posmin]=aux;
         }
     }
 }
