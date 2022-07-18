@@ -4,6 +4,7 @@
 
 #include "vectores.h"
 #include "jugadas.h"
+#include "dibujosDados.h"
 
 //PROTOTIPOS:
 
@@ -45,6 +46,9 @@ void turno1P(int vectorDados[],int cantDados, int &tiradas){
         if(salir==true){
             break;
         }
+        cout<<"                                      "<<endl;
+        cout<<"--------------------------------------"<<endl;
+        cout<<"                                      "<<endl;
         cout<<"Queres cambiar algun dado? 1-SI / 2-NO"<<endl;
         cin>>opcion;
         switch (opcion){
@@ -57,7 +61,9 @@ void turno1P(int vectorDados[],int cantDados, int &tiradas){
                     cambioDado(cantDados,vectorDados);
                 }
                 system("cls");
+                vasos();
                 cout<<"Sus dados actuales son: "<<endl;
+                system("cls");
                 leerDados(vectorDados);
                 tiradas++;
                 break;

@@ -59,8 +59,6 @@ void ordenarVector(int vect[], int tamano){
 }
 
 void leerDados(int vectorDados[]){
-    vasos();
-    system("cls");
     for(int i=0;i<5;i++){
         dibujosDados(vectorDados[i]);
     }

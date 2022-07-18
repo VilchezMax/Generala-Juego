@@ -6,7 +6,7 @@
 //PROTOTIPOS:
 void imprimirResultados(int vectorJugador[], string nombreJugador, int acumTiradas, int puntajeFinal);
 bool diaDeSuerte(void); //Funcion que se ejecuta cuando hay generala servida;
-void infoRonda(string nombreJugador,int vectorJugador[0],int puntajeFinal,int tirada,int acumTiradas);
+void infoRonda(string nombreJugador,int vectorJugador[],int puntajeFinal,int tiradas,int acumTiradas);
 
 
 

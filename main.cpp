@@ -16,12 +16,12 @@ int main(){
         //MENU PRINCIPAL
         cout<<"Presione: "<<endl;
         cout<<"1 - Modo un jugador"<<endl;
-        cout<<"2 - Modo profesor"<<endl;
+        cout<<"2 - Modo profesor (2 turnos)"<<endl;
         cout<<"Otro - Salir"<<endl;
 
         int menu;
         cin>>menu;
-
+        system("cls");
         string vectorCategorias[] = {"   TURNO","       1","       2","       3","       4",
                                      "       5","       6","Escalera","    Full","   Poker","Generala"};
         string vectorCategorias2[] = {"TURNO","1","2","3","4","5","6","Escalera","Full","Poker","Generala"};
@@ -43,7 +43,7 @@ int main(){
             int vectorJugador[]={0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
             int vectorPuntajesValidos[10]; //[0] cuenta turnos, no cuenta
             int vectorOpciones[10];
-            int puntajeFinal;
+            int puntajeFinal=0;
             int tamano=11;
             int cantDados=5;
             bool servida=false;
@@ -55,6 +55,10 @@ int main(){
                 cout<<"Sus dados son: "<<endl;
                 system("cls");
                 primerTiro(cantDados,vectorDados);
+                infoRonda(nombre,vectorJugador,puntajeFinal,tiradas,acumTiradas);
+                vasos();
+                system("cls");
+                infoRonda(nombre,vectorJugador,puntajeFinal,tiradas,acumTiradas);
                 leerDados(vectorDados);
                 tiradas++;
 
@@ -77,6 +81,7 @@ int main(){
                 jugadasValidas(vectorPuntajesValidos,vectorCategorias2,vectorJugador,vectorOpciones);
                 acumTiradas+=tiradas;
                 system("cls");
+                infoRonda(nombre,vectorJugador,puntajeFinal,tiradas,acumTiradas);
                 cout<<"      PUNTAJE"<<endl<<endl;
                 leerVector(nombre,vectorCategorias,vectorJugador, tamano);
                 puntajeFinal=sumarPuntajes(vectorJugador,tamano);
