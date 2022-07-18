@@ -9,28 +9,23 @@ using namespace std;
 #include "headers/finalPartida.h"
 #include "headers/dibujosDados.h"
 
-/*
-   PUNTAJES
-   ESCALERA:25
-   FULL:30
-   POKER:40
-   GENERALA:50
-*/
 int main(){
     bool jugar = true;
     while(jugar){
         system("cls");
+        //MENU PRINCIPAL
         cout<<"Presione: "<<endl;
         cout<<"1 - Modo un jugador"<<endl;
         cout<<"2 - Modo profesor"<<endl;
-        cout<<"3 - Ver puntajes maximos"<<endl;
         cout<<"Otro - Salir"<<endl;
 
         int menu;
         cin>>menu;
+
         string vectorCategorias[] = {"   TURNO","       1","       2","       3","       4",
                                      "       5","       6","Escalera","    Full","   Poker","Generala"};
-
+        string vectorCategorias2[] = {"TURNO","1","2","3","4","5","6","Escalera","Full","Poker","Generala"};
+        //JUEGO
         switch(menu){
          /* -------------- 1 JUGADOR ----------------  */
         case 1:
@@ -49,32 +44,39 @@ int main(){
             int vectorPuntajesValidos[10]; //[0] cuenta turnos, no cuenta
             int vectorOpciones[10];
             int puntajeFinal;
-            int tamano=sizeof(vectorJugador)/sizeof(vectorJugador[0]);
+            int tamano=11;
             int cantDados=5;
             bool servida=false;
             int acumTiradas=0;
-
             for (int i=0;i<turnos;i++){
+                //Inicia turno
                 int tiradas = 0;
 
                 cout<<"Sus dados son: "<<endl;
+                system("cls");
                 primerTiro(cantDados,vectorDados);
                 leerDados(vectorDados);
                 tiradas++;
-                turno1P(vectorDados,cantDados,tiradas);
-                vectorJugador[0]++;
 
-                servida=generalaServida(vectorJugador,tiradas);
+                turno1P(vectorDados,cantDados,tiradas);
+
+                vectorJugador[0]++;
+                //Evalua generala servida
+                /* CODIGO PARA EVALUAR FUNCION DE GENERALA SERVIDA
+                vectorDados[0]=5;
+                vectorDados[1]=5;
+                vectorDados[2]=5;
+                vectorDados[3]=5;
+                vectorDados[4]=5;*/
+                servida=generalaServida(vectorDados,tiradas);
                 if (servida==true){
-                    diaDeSuerte();
                     break;
                 }
-
+                //Evalua posibles jugadas
                 evaluacionJugadas(vectorDados,vectorPuntajesValidos);
-                jugadasValidas(vectorPuntajesValidos,vectorCategorias,vectorJugador,vectorOpciones);
+                jugadasValidas(vectorPuntajesValidos,vectorCategorias2,vectorJugador,vectorOpciones);
                 acumTiradas+=tiradas;
                 system("cls");
-                //ACA EMPIEZA CARTEL FINL TURNO:
                 cout<<"      PUNTAJE"<<endl<<endl;
                 leerVector(nombre,vectorCategorias,vectorJugador, tamano);
                 puntajeFinal=sumarPuntajes(vectorJugador,tamano);
@@ -82,17 +84,15 @@ int main(){
                 cout<<"LANZAMIENTOS: "<<acumTiradas<<endl;
                 system("pause");
             }
-            imprimirResultados(vectorJugador,nombre,acumTiradas);
-            break;
-
-        }
-
-        case 3:{
-            cout<<"Maximos puntajes:"<<endl;
-            cout<<"----------------------"<<endl;
-            cout<<"10 - Maximiliano Vilchez"<<endl;
-            cout<<"10 - Facundo Vilchez"<<endl;
+            system("cls");
+            if(servida==true){
+                diaDeSuerte();
+                break;
+            } else {
+            leerVector(nombre,vectorCategorias,vectorJugador,tamano);
+            imprimirResultados(vectorJugador,nombre,acumTiradas,puntajeFinal);
             system("pause");
+            }
             break;
 
         }

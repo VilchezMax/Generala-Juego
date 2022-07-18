@@ -12,6 +12,8 @@ void cinco(void);
 void seis(void);
 
 void vaso1(void); //Vasos para animacion
+void vaso2(void);
+void vasos(void);  //Animacion de vaso
 
 //DEFINICIONES:
 void vaso1(void){
@@ -27,9 +29,9 @@ void vaso2(void){
     cout <<"                ________________       "<< endl;
     cout <<"               (________________)      "<< endl;
     cout <<"               \\               /      "<< endl;
-    cout <<"                \\             /   ))) "<< endl;
-    cout <<"            (((  \\           /        "<< endl;
-    cout <<"                  \\         /         "<< endl;
+    cout <<"                \\             /  )))  "<< endl;
+    cout <<"                 \\           /        "<< endl;
+    cout <<"            (((   \\         /         "<< endl;
     cout <<"                   \\_______/          "<< endl;
 }
 void uno(void){

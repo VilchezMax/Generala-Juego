@@ -21,16 +21,16 @@ void cargarVector(int vect[], int tamano){
 }
 
 void leerVector(string nombre,string vectCategorias[], int vectJugador[], int tamano){
-        cout<<" ----------------"<<endl;
+        cout<<" --------------------- "<<endl;
         cout<<"|  JUGADOR | "<<nombre<<endl;
-        cout<<" ----------------"<<endl;
+        cout<<" --------------------- "<<endl;
     for (int i=0;i<tamano;i++){
         if(vectJugador[i]==-1){
             cout<<"| "<<vectCategorias[i]<<" | "<<" - "<<endl;
-            cout<<" ----------------"<<endl;
+            cout<<" --------------------- "<<endl;
         }else{
             cout<<"| "<<vectCategorias[i]<<" | "<<vectJugador[i]<<endl;
-            cout<<" ----------------"<<endl;
+            cout<<" --------------------- "<<endl;
         }
     }
 }
@@ -59,13 +59,13 @@ void ordenarVector(int vect[], int tamano){
 }
 
 void leerDados(int vectorDados[]){
-    system("cls");
     vasos();
     system("cls");
     for(int i=0;i<5;i++){
         dibujosDados(vectorDados[i]);
     }
 }
+
 
 
 
