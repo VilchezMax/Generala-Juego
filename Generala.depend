@@ -12,7 +12,7 @@
 1655854604 c:\users\maxim\escritorio\utn\primer a—o\laboratorio 1\proyecto final\generala\generala\headers\vectores.h
 	"fxDados.h"
 
-1658108234 source:c:\users\maxim\escritorio\utn\primer_a—o\lab_1\proyecto_final\generala\generala\main.cpp
+1658111256 source:c:\users\maxim\escritorio\utn\primer_a—o\lab_1\proyecto_final\generala\generala\main.cpp
 	<iostream>
 	<cstdlib>
 	<time.h>
@@ -22,20 +22,20 @@
 	"headers/finalPartida.h"
 	"headers/dibujosDados.h"
 
-1658099773 c:\users\maxim\escritorio\utn\primer_a—o\lab_1\proyecto_final\generala\generala\headers\fxdados.h
+1658111104 c:\users\maxim\escritorio\utn\primer_a—o\lab_1\proyecto_final\generala\generala\headers\fxdados.h
 	<time.h>
 	"vectores.h"
 	"jugadas.h"
 
-1658107480 c:\users\maxim\escritorio\utn\primer_a—o\lab_1\proyecto_final\generala\generala\headers\vectores.h
+1658110853 c:\users\maxim\escritorio\utn\primer_a—o\lab_1\proyecto_final\generala\generala\headers\vectores.h
 	"dibujosDados.h"
 	"fxDados.h"
 
-1658096466 c:\users\maxim\escritorio\utn\primer_a—o\lab_1\proyecto_final\generala\generala\headers\jugadas.h
+1658111014 c:\users\maxim\escritorio\utn\primer_a—o\lab_1\proyecto_final\generala\generala\headers\jugadas.h
 	"vectores.h"
 	"finalPartida.h"
 
-1658108040 c:\users\maxim\escritorio\utn\primer_a—o\lab_1\proyecto_final\generala\generala\headers\finalpartida.h
+1658111200 c:\users\maxim\escritorio\utn\primer_a—o\lab_1\proyecto_final\generala\generala\headers\finalpartida.h
 
 1658085204 source:c:\users\facun\desktop\utn\generala\generala-juego\main.cpp
 	<iostream>

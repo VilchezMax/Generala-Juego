@@ -123,6 +123,9 @@ void evaluacionJugadas(int vectorDados[],int vectorPuntajesValidos[]){
 void jugadasValidas (int vectorPuntajesValidos[],string vectorCategorias[], int vectorJugador[], int vectorOpciones[]){
     int opcion=0;
     int eleccion;
+    cout<<"                                      "<<endl;
+    cout<<"------------------------------------------------"<<endl;
+    cout<<"                                      "<<endl;
     cout<<"Usted puede elegir entre las siguientes jugadas:"<<endl;
     for (int i=10;i>=1;i--){
         if (vectorPuntajesValidos[i] !=0 && vectorJugador[i]== -1 ){
@@ -132,6 +135,9 @@ void jugadasValidas (int vectorPuntajesValidos[],string vectorCategorias[], int 
         }
     }
     if(opcion==0){
+        cout<<"                                      "<<endl;
+        cout<<"----------------------------------------------------------------------"<<endl;
+        cout<<"                                      "<<endl;
         cout<<"No hay jugadas disponibles, tiene que anular alguna de las siguientes:"<<endl;
         for (int i=10;i>=1;i--){
             if (vectorJugador[i]== -1){
@@ -141,6 +147,9 @@ void jugadasValidas (int vectorPuntajesValidos[],string vectorCategorias[], int 
             }
         }
     }
+        cout<<"                                      "<<endl;
+        cout<<"-----------------"<<endl;
+        cout<<"                                      "<<endl;
         cout<<"Elija la jugada:"<<endl;
         cin>>eleccion;
     if(opcion>0){

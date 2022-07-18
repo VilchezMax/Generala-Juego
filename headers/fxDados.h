@@ -45,10 +45,17 @@ void turno1P(int vectorDados[],int cantDados, int &tiradas){
         if(salir==true){
             break;
         }
+        cout<<"                                      "<<endl;
+        cout<<"--------------------------------------"<<endl;
+        cout<<"                                      "<<endl;
         cout<<"Queres cambiar algun dado? 1-SI / 2-NO"<<endl;
+        cout<<"                                      "<<endl;
         cin>>opcion;
         switch (opcion){
             case 1:
+                cout<<"                       "<<endl;
+                cout<<"-----------------------"<<endl;
+                cout<<"                       "<<endl;
                 cout<<"Cuantos quiere cambiar?"<<endl;
                 cin>>cantDados;
                 if (cantDados==5){
@@ -58,6 +65,8 @@ void turno1P(int vectorDados[],int cantDados, int &tiradas){
                 }
                 system("cls");
                 cout<<"Sus dados actuales son: "<<endl;
+                cout<<"                       "<<endl;
+
                 leerDados(vectorDados);
                 tiradas++;
                 break;

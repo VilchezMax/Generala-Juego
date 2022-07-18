@@ -36,6 +36,7 @@ int main(){
             } else if (menu==2){
                 turnos=2;
             }
+            system("cls");
             string nombre;
             cout<<"Ingrese su nombre: "<<endl;
             cin>>nombre;
@@ -51,16 +52,16 @@ int main(){
             for (int i=0;i<turnos;i++){
                 //Inicia turno
                 int tiradas = 0;
-
-                cout<<"Sus dados son: "<<endl;
                 system("cls");
+                infoRonda(nombre,vectorJugador,puntajeFinal,tiradas,acumTiradas);
+                system("pause");
                 primerTiro(cantDados,vectorDados);
+                system("cls");
                 leerDados(vectorDados);
                 tiradas++;
-
                 turno1P(vectorDados,cantDados,tiradas);
-
                 vectorJugador[0]++;
+
                 //Evalua generala servida
                 /* CODIGO PARA EVALUAR FUNCION DE GENERALA SERVIDA
                 vectorDados[0]=5;
@@ -77,7 +78,10 @@ int main(){
                 jugadasValidas(vectorPuntajesValidos,vectorCategorias2,vectorJugador,vectorOpciones);
                 acumTiradas+=tiradas;
                 system("cls");
-                cout<<"      PUNTAJE"<<endl<<endl;
+                infoRonda(nombre,vectorJugador,puntajeFinal,tiradas,acumTiradas);
+                system("pause");
+
+                cout<<"                                      "<<endl<<endl;
                 leerVector(nombre,vectorCategorias,vectorJugador, tamano);
                 puntajeFinal=sumarPuntajes(vectorJugador,tamano);
                 cout<<"PUNTAJE ACTUAL: "<<puntajeFinal<<" PUNTOS"<<endl;

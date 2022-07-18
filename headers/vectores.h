@@ -60,6 +60,7 @@ void ordenarVector(int vect[], int tamano){
 
 void leerDados(int vectorDados[]){
     vasos();
+    cout<<"Sus dados son: "<<endl;
     system("cls");
     for(int i=0;i<5;i++){
         dibujosDados(vectorDados[i]);
